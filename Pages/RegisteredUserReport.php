@@ -12,7 +12,7 @@ $sql = $dbCon ->query("SELECT * FROM USER ORDER BY UserID DESC");
 <body>
 <form class="modal-content">
     <div class="container">
-        <button type="button" name="Cancel" class="cancelbtn" onClick="document.location.href='Ragister.php'">Home</button>
+        <button type="button" name="Cancel" class="cancelbtn" onClick="document.location.href='index.php'">Home</button>
         </br></br></br>
         <h2>Registered Users</h2>
         <p>List of awesome people</p>

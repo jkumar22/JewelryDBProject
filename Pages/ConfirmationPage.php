@@ -12,7 +12,7 @@
         <p>Have a great journy!</p>
         <hr>
         <div class="clearfix" style="width:40%">
-            <Button type="button" class="signupbtn" onClick="document.location.href='../index.php';"/>Register Again!</Button>
+            <Button type="button" class="signupbtn" onClick="document.location.href='index.php';"/>Register Again!</Button>
         </div>
 
     </div>

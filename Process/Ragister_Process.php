@@ -124,7 +124,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
         if (mysqli_query($dbCon, $sql_add))
         {
-            header('Location: /Pages/ConfirmationPage.php');
+            header('Location: ConfirmationPage.php');
         }
         else
         {
