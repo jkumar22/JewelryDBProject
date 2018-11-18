@@ -14,8 +14,8 @@ $sql = $dbCon ->query("SELECT * FROM USER ORDER BY UserID DESC");
     <div class="container">
         <button type="button" name="Cancel" class="cancelbtn" onClick="document.location.href='Ragister.php'">Home</button>
         </br></br></br>
-        <h2>HelloWorld's Registered Users</h2>
-        <p>Here is the secrect list of awesome people</p>
+        <h2>Registered Users</h2>
+        <p>List of awesome people</p>
 
         <form class="modal-content" action="RegisteredUserReport.php">
 

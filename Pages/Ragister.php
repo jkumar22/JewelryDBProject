@@ -11,8 +11,8 @@
         <button type="button" name="Cancel" class="cancelbtn" onClick="document.location.href='RegisteredUserReport.php'">UserTable</button>
         </br></br></br>
 
-        <h2>Welcome to HelloWorld Registration</h2>
-        <p>Please fill in this form to join list of secrate awesome people.</p>
+        <h2>Welcome to Awesome Jewelry!</h2>
+        <p>Register to buy the best Jewelry in the world. It has magic powers.</p>
         <hr>
 
         <label for="Fname"><b>First Name</b></label>
