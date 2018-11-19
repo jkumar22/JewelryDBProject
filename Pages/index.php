@@ -1,4 +1,4 @@
 <?php
-header('Location: Register.php');
+header('Location: home.php');
 ?>
 

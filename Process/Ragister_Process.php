@@ -1,17 +1,17 @@
 <?php
 
-
 include('../DBConnection/DBconnection.php');
 
-$Fname = $Lname = $Email = $Address = $Address2 = $City = $State = $Zip = $Country = "";
-$Fname_Error = $Lname_Error = $Email_Error = $Address_Error = $Address2_Error = $City_Error = $State_Error = $Zip_Error = $Country_Error = "";
+$userId = $Fname = $Lname = $Email = $Password = $ConfirmPassword = $Address = $Address2 = $City = $State = $Zip = $Country = "";
+$Fname_Error = $Lname_Error = $Email_Error = $Password_Error = $ConfirmPassword_Error = $Address_Error = $Address2_Error = $City_Error = $State_Error = $Zip_Error = $Country_Error = "";
 $IsError = "false";
 
-//if (isset($_POST['submit']))
+session_start();
+
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
-    //First Name
     $IsError = "false";
+    //First Name
     $InputValue = $_POST["Fname"];
     if (validateInput($InputValue) == "true")
     {
@@ -46,6 +46,30 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     if (!filter_var($InputValue, FILTER_VALIDATE_EMAIL)) {
         $Email_Error = "Invalid email format";
         $IsError = "true";
+    }
+
+    //password
+    $InputValue = $_POST["Password"];
+    if (empty($_POST["Password"])) {
+        $Password_Error= "Missing Password";
+        $isError = true;
+    }else {
+        $Password = DoublecheckText($InputValue);
+    }
+
+    //confirmation password
+    $InputValue = $_POST["Password"];
+    if (empty($_POST["Password"])) {
+        $ConfirmPassword_Error= "Missing Confirmation Password";
+        $isError = true;
+    }else {
+        if($ConfirmPassword == $Password) {
+            $ConfirmPassword = DoublecheckText($InputValue);
+        }
+        else{
+            $ConfirmPassword_Error= "Password did not match";
+            $isError = true;
+        }
     }
 
     //Address
@@ -119,10 +143,43 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
     if ($IsError == "false")
     {
+        $sql = "SELECT email FROM USER WHERE email = '$Email'";
+        $result = mysqli_query($dbCon, $sql);
+
+        if (mysqli_num_rows($result) > 0) {
+            $Email_Error = "Email can not be use.";
+            $IsError = "true";
+        }
+    }
+
+    if ($IsError == "false")
+    {
         $sql_add = "INSERT INTO USER (fname,lname,email,address1,address2,city,state,zip,country,date)
 			VALUES ('$Fname','$Lname','$Email','$Address','$Address2','$City','$State','$Zip','$Country','$dateval')";
 
         if (mysqli_query($dbCon, $sql_add))
+        {
+            header('Location: ConfirmationPage.php');
+        }
+        else
+        {
+            echo  "Error: " . $sql_add . "<br>" . mysqli_error($dbCon);
+        }
+
+        $sql = "SELECT userId FROM USER WHERE email = '$Email'";
+        $result = mysqli_query($dbCon, $sql);
+
+        if (mysqli_num_rows($result) > 0) {
+            // output data of each row
+            while($row = mysqli_fetch_assoc($result)) {
+                $userId = $row["userID"];
+            }
+        }
+
+        $sql_addTwo = "INSERT INTO LOGIN (userID, email, password)
+			VALUES ('$userId','$Email','$Password')";
+
+        if (mysqli_query($dbCon, $sql_addTwo))
         {
             header('Location: ConfirmationPage.php');
         }

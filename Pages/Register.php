@@ -6,11 +6,9 @@
 </head>
 
 <body>
+<?php include 'header.php'; ?>
 <form class="modal-content" method="post" style="width:50%" action= "<?= $_SERVER['PHP_SELF']; ?>" autocomplete="on">
     <div class="container">
-        <button type="button" name="Cancel" class="cancelbtn" onClick="document.location.href='RegisteredUserReport.php'">UserTable</button>
-        </br></br></br>
-
         <h2>Welcome to Awesome Jewelry!</h2>
         <p>Register to buy the best Jewelry in the world. It has magic powers.</p>
         <hr>
@@ -27,7 +25,15 @@
         <span class="error"><?php echo $Email_Error ;?></span>
         <input type="text" placeholder="Enter Email" name="email" value="<?= $Email ?>">
 
-        <label for="address"><b>Address</b></label>
+        <label for="Fname"><b>Password</b></label>
+        <span class="error"><?php echo $Password_Error ;?></span>
+        <input type="password" name="Password" placeholder="Password" value="<?= $Password ?>">
+
+        <label for="Fname"><b>Confirm Password</b></label>
+        <span class="error"><?php echo $ConfirmPassword_Error ;?></span>
+        <input type="password" name="ConfirmPassword" placeholder="Confirm Password" value="<?= $ConfirmPassword ?>">
+
+        <label for="address"><b>Shipping Address</b></label>
         <span class="error"><?php echo $Address_Error;?></span>
         <input type="text" placeholder="Enter Address" name="address" value="<?= $Address ?>">
 

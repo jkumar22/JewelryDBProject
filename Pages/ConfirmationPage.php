@@ -5,6 +5,7 @@
 </head>
 
 <body>
+<?php include 'header.php'; ?>
 <form class="modal-content" style="width:50%">
     <div class="container">
         <h2>Thank you for Registering to HelloWorld </h2>
