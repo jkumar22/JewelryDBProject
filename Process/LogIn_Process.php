@@ -6,8 +6,6 @@ $Username = $Password = "";
 $Username_Error = $Password_Error = $Login_Error= "";
 $IsError = "false";
 
-session_start();
-
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {
     $IsError = "false";
@@ -41,7 +39,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 //        $message = $Password;
 //        echo "<script type='text/javascript'>alert('$message');</script>";
 //        echo $Password;
-        $sql = "SELECT userId, email, password, adminFlag FROM LOGIN WHERE email = '$Username' AND password = '$Password'";
+        $sql = "SELECT userID, email, password, adminFlag FROM LOGIN WHERE email = '$Username' AND password = '$Password'";
         //$sql = "SELECT * FROM LOGIN";
         $result = mysqli_query($dbCon, $sql);
 
@@ -57,9 +55,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         if ($Username == $dbUsername && $Password == $dbPassword)
         {
 
-//            echo $Username . " : " . $dbUsername . "<br>";
-//            echo $Password . " : " . $dbPassword . "<br>";
-//            echo $dbadminFlag . "<br>";
+            echo $Username . " : " . $dbUsername . "<br>";
+            echo $Password . " : " . $dbPassword . "<br>";
+            echo $dbadminFlag . "<br>";
 
             $_SESSION['loggedIn'] = "True";
             $_SESSION['userID'] = $userId;
@@ -76,6 +74,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         else
             {
                 $_SESSION['loggedIn'] = "False";
+                $_SESSION['adminFlag'] = 0;
                 $message = "Username and/or Password incorrect.\\nTry again.";
             echo "<script type='text/javascript'>alert('$message');</script>";
             $Password = "";

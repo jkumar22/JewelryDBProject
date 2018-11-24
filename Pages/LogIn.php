@@ -21,7 +21,6 @@
                 <span class="error"><?php echo $Password_Error ;?></span>
                 <input type="password" name="Password" placeholder="Password" value="<?= $Password ?>">
 
-
                 <div class="clearfix">
                     <button type="submit" name="submit" class="signupbtn">Log In</button>
                     <button type="button" name="Cancel" onClick="document.location.href='index.php';" class="cancelbtn">Cancel</button>

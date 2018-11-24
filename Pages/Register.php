@@ -1,4 +1,6 @@
-<?php include('../Process/Ragister_Process.php'); ?>
+<?php include('../Process/Ragister_Process.php'); 
+
+?>
 <!DOCTYPE html>
 <html>
 <head>

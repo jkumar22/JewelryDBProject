@@ -6,7 +6,7 @@ $userId = $Fname = $Lname = $Email = $Password = $ConfirmPassword = $Address = $
 $Fname_Error = $Lname_Error = $Email_Error = $Password_Error = $ConfirmPassword_Error = $Address_Error = $Address2_Error = $City_Error = $State_Error = $Zip_Error = $Country_Error = "";
 $IsError = "false";
 
-session_start();
+
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
 {

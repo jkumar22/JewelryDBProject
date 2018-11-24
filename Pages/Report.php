@@ -1,3 +1,5 @@
+<?php include('../DBConnection/DBconnection.php');?>
+
 <!DOCTYPE html>
 <html>
 <head>
