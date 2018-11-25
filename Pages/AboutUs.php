@@ -1,4 +1,5 @@
-<?php include('../Process/.php'); ?>
+<?php include('../DBConnection/DBconnection.php');?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -6,12 +7,12 @@
 </head>
 
 <body>
-<?php include 'header.php'; ?>
+<?php $currentPage ='About'; include 'header.php'; ?>
 <form class="modal-content" method="post" style="width:50%" action= "<?= $_SERVER['PHP_SELF']; ?>" autocomplete="on">
     <div class="container">
         <h2>Let's Learn about Awesome Jewelry!</h2>
         <p>Everyone one of us guarantee your satisfactory with our product.</p>
-        <hr>
+        <hr >
         <p>
             <B>Krishna Sahithi Devulapalli</B> </br>
             krisah@umich.edu

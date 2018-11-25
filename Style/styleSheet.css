@@ -43,7 +43,7 @@ button {
 }
 
 button:hover {
-    opacity:1;
+    opacity:2;
 }
 
 /* Extra styles for the cancel button */
@@ -135,18 +135,18 @@ ul {
 li {
     float: left;
     border-right:1px solid #bbb;
+    border-left:1px solid #bbb;
 }
 
-li:last-child {
-    border-right: none;
-}
 
 li a {
+    float: left;
     display: block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    border-bottom: 3px solid transparent;
 }
 
 li a:hover:not(.active) {

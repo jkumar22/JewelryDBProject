@@ -1,3 +1,5 @@
+<?php include('../DBConnection/DBconnection.php');?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -5,15 +7,15 @@
 </head>
 
 <body>
-<?php include 'header.php'; ?>
+<?php $currentPage ='confirmationPage'; include 'header.php'; ?>
 <form class="modal-content" style="width:50%">
     <div class="container">
-        <h2>Thank you for Registering to HelloWorld </h2>
-        <p>You have been added to list of people with awesomess.</p>
+        <h2>Thank you for Registering!</h2>
+        <p>You can now shop our Awesome Jewelry.</p>
         <p>Have a great journy!</p>
         <hr>
         <div class="clearfix" style="width:40%">
-            <Button type="button" class="signupbtn" onClick="document.location.href='index.php';"/>Register Again!</Button>
+            <Button type="button" class="signupbtn" onClick="document.location.href='index.php';"/>Return Home!</Button>
         </div>
 
     </div>
