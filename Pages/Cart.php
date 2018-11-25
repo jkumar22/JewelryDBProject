@@ -7,7 +7,10 @@ if((isset($_SESSION['loggedIn'])) && ($_SESSION['loggedIn'] == "True" ))
 
 }else
 {
-    header('Location: LogIn.php');
+    $message = "Please Login to view your cart. Thank You!";
+    //echo "<script type='text/javascript'>alert('$message');</script>";
+    echo "<script>if(confirm('$message')){document.location.href='LogIn.php'}else{document.location.href='index.php'};</script>";
+    //header('Location: LogIn.php');
 }
 
 ?>

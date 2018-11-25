@@ -134,7 +134,7 @@
 
         <div class="clearfix">
             <button type="submit" name="submit" class="signupbtn">Sign Up</button>
-            <button type="button" name="Cancel" class="cancelbtn">Cancel</button>
+            <button type="button" name="Cancel" onClick="document.location.href='index.php';" class="cancelbtn">Cancel</button>
         </div>
     </div>
 </form>
