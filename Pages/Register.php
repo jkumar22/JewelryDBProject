@@ -8,7 +8,7 @@
 </head>
 
 <body>
-<?php include 'header.php'; ?>
+<?php $currentPage = 'Register'; include 'header.php'; ?>
 <form class="modal-content" method="post" style="width:50%" action= "<?= $_SERVER['PHP_SELF']; ?>" autocomplete="on">
     <div class="container">
         <h2>Welcome to Awesome Jewelry!</h2>
@@ -27,18 +27,36 @@
         <span class="error"><?php echo $Email_Error ;?></span>
         <input type="text" placeholder="Enter Email" name="email" value="<?= $Email ?>">
 
-        <label for="Fname"><b>Password</b></label>
+        <label for="password"><b>Password</b></label>
         <span class="error"><?php echo $Password_Error ;?></span>
         <input type="password" name="Password" placeholder="Password" value="<?= $Password ?>">
 
-        <label for="Fname"><b>Confirm Password</b></label>
+        <label for="password"><b>Confirm Password</b></label>
         <span class="error"><?php echo $ConfirmPassword_Error ;?></span>
         <input type="password" name="ConfirmPassword" placeholder="Confirm Password" value="<?= $ConfirmPassword ?>">
+
+        <label for="CreditCard"><b>Credit Card</b></label>
+        <span class="error"><?php echo $CreditCard_Error ;?></span>
+        <input type="text" name="CreditCard" placeholder="4115105553560544" value="<?= $CreditCard ?>">
+
+        <div style="width:100%;">
+            <div style="width:20%; float:left; margin-right:50px"> 
+                <label for="cvv"><b>CVV</b></label>
+                <span class="error"><?php echo $cvv_Error ;?></span>
+                <input type="text" placeholder="434" name="cvv" value="<?= $cvv ?>">
+            </div>
+            <div style="width:30%; float:left; margin-right:10px"> 
+                <label for="cvv"><b>Experation date</b></label>
+                <span class="error"><?php echo $ExperationDate_Error ;?></span>
+                <input type="text" placeholder="11/2019" name="ExperationDate" value="<?= $ExperationDate ?>">
+            </div>
+        </div>
+        </br></br></br></br></br>
 
         <label for="address"><b>Shipping Address</b></label>
         <span class="error"><?php echo $Address_Error;?></span>
         <input type="text" placeholder="Enter Address" name="address" value="<?= $Address ?>">
-
+        
         <label for="address2"><b>Address2</b></label>
         <span class="error"><?php echo $Address2_Error;?></span>
         <input type="text" placeholder="apt. 123" name="address2" value="<?= $Address2 ?>">

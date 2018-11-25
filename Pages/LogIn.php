@@ -7,11 +7,12 @@
     </head>
 
     <body>
-    <?php include 'header.php'; ?>
+    <?php $currentPage ='LogIn'; include 'header.php'; ?>
         <form class="modal-content" method="post" style="width:50%" action= "<?= $_SERVER['PHP_SELF']; ?>" autocomplete="on">
             <div class="container">
                 <h2>Welcome to Awesome Jewelry!</h2>
                 <p>Please login to shop at the world's best Jewelry Store.</p>
+                <span class="error"><?php echo $Login_Error ;?></span></br>
                 <hr>
                 <label for="Fname"><b>Username</b></label>
                 <span class="error"><?php echo $Username_Error ;?></span>

@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<?php include 'header.php'; ?>
+<?php $currentPage ='home'; include 'header.php'; ?>
 <form class="modal-content" method="post" style="width:50%" action= "<?= $_SERVER['PHP_SELF']; ?>" autocomplete="on">
     <div class="container">
         <h2>Welcome to Awesome Jewelry Home!</h2>

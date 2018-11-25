@@ -2,8 +2,8 @@
 
 include('../DBConnection/DBconnection.php');
 
-$userId = $Fname = $Lname = $Email = $Password = $ConfirmPassword = $Address = $Address2 = $City = $State = $Zip = $Country = "";
-$Fname_Error = $Lname_Error = $Email_Error = $Password_Error = $ConfirmPassword_Error = $Address_Error = $Address2_Error = $City_Error = $State_Error = $Zip_Error = $Country_Error = "";
+$userId = $Fname = $Lname = $Email = $Password = $CreditCard = $ConfirmPassword = $Address = $Address2 = $City = $State = $Zip = $Country = $cvv = $ExperationDate = "";
+$Fname_Error = $Lname_Error = $Email_Error = $CreditCard_Error = $Password_Error = $ConfirmPassword_Error = $Address_Error = $Address2_Error = $City_Error = $State_Error = $Zip_Error = $Country_Error = $cvv_Error =  $ExperationDate_Error = "";
 $IsError = "false";
 
 
@@ -49,27 +49,71 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     }
 
     //password
-    $InputValue = $_POST["Password"];
+    $Password = $_POST["Password"];
     if (empty($_POST["Password"])) {
         $Password_Error= "Missing Password";
         $isError = true;
     }else {
-        $Password = DoublecheckText($InputValue);
+        $Password = DoublecheckText($Password);
     }
 
     //confirmation password
-    $InputValue = $_POST["Password"];
-    if (empty($_POST["Password"])) {
+    $ConfirmPassword = $_POST["ConfirmPassword"];
+    if (empty($_POST["ConfirmPassword"])) {
         $ConfirmPassword_Error= "Missing Confirmation Password";
         $isError = true;
     }else {
-        if($ConfirmPassword == $Password) {
-            $ConfirmPassword = DoublecheckText($InputValue);
-        }
-        else{
-            $ConfirmPassword_Error= "Password did not match";
-            $isError = true;
-        }
+        $ConfirmPassword = DoublecheckText($ConfirmPassword);
+    }
+
+    //match password with confirmation password
+    if($ConfirmPassword == $Password)
+    {
+        $ConfirmPassword_Error= "";
+        $Password_Error= "";
+    }
+    else{
+        $Password = "";
+        $ConfirmPassword = ""; 
+        $ConfirmPassword_Error= "Password did not match";
+        $Password_Error= "Password did not match";
+        $isError = true;
+    }
+
+    //Credit Card
+    $InputValue = $_POST["CreditCard"];
+    if (validateCreditCardInput($InputValue) == "true")
+    {
+        $CreditCard = DoublecheckText($InputValue);
+        $CreditCard_Error = "";
+    }
+    else{
+        $CreditCard_Error = validateCreditCardInput($InputValue);
+        $IsError = "true";
+    }
+
+    //CVV
+    $InputValue = $_POST["cvv"];
+    if (validateInput($InputValue) == "true")
+    {
+        $cvv = DoublecheckText($InputValue);
+        $cvv_Error = "";
+    }
+    else{
+        $cvv_Error = validateInput($InputValue);
+        $IsError = "true";
+    }
+
+    //ExperationDate
+    $InputValue = $_POST["ExperationDate"];
+    if (validateInput($InputValue) == "true")
+    {
+        $ExperationDate = DoublecheckText($InputValue);
+        $ExperationDate_Error = "";
+    }
+    else{
+        $ExperationDate_Error = validateInput($InputValue);
+        $IsError = "true";
     }
 
     //Address
@@ -159,14 +203,13 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
 
         if (mysqli_query($dbCon, $sql_add))
         {
-            header('Location: ConfirmationPage.php');
         }
         else
         {
             echo  "Error: " . $sql_add . "<br>" . mysqli_error($dbCon);
         }
 
-        $sql = "SELECT userId FROM USER WHERE email = '$Email'";
+        $sql = "SELECT userID FROM USER WHERE email = '$Email'";
         $result = mysqli_query($dbCon, $sql);
 
         if (mysqli_num_rows($result) > 0) {
@@ -175,12 +218,22 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 $userId = $row["userID"];
             }
         }
+        
+        echo  "UserID: " . $userId . "<br>";
+        echo  "Email: " . $Email . "<br>";
+        echo  "password: " . $Password . "<br>";
 
-        $sql_addTwo = "INSERT INTO LOGIN (userID, email, password)
-			VALUES ('$userId','$Email','$Password')";
+
+        $sql_addTwo = "INSERT INTO LOGIN (userID, email, password, adminFlag)
+			VALUES ('$userId','$Email','$Password', 0)";
 
         if (mysqli_query($dbCon, $sql_addTwo))
         {
+            $_SESSION['loggedIn'] = "True";
+            $_SESSION['userID'] = $userId;
+            $_SESSION['adminFlag'] = 0;
+            $_SESSION['fname'] = $Fname;
+
             header('Location: ConfirmationPage.php');
         }
         else
@@ -233,6 +286,32 @@ function validateZipInput($value)
     if((!preg_match("/^([0-9]{5})?$/i",$value)) && (!preg_match("/^([0-9]{5})(-[0-9]{4})?$/i",$value))) // check if name only contains correct Zip
     {
         $ValueIsInvalid = "Invalid Entry, Must be between 5-9 digits";
+        $Error = true;
+        $IsError = "true";
+        return $ValueIsInvalid;
+    }
+    if ($Error == false)
+    {
+        return "true";
+    }
+}
+
+function validateCreditCardInput($value)
+{
+    $valueIsEmpty = $ValueIsInvalid = "";
+    $Error = false;
+
+    if(empty($value))
+    {
+        $valueIsEmpty = "Required!";
+        $Error = true;
+        $IsError = "true";
+        return $valueIsEmpty;
+    }
+
+    if((!preg_match("/^([0-9]{16})?$/i",$value))) // check if name only contains correct Zip
+    {
+        $ValueIsInvalid = "Invalid Entry, Must be 16 digits";
         $Error = true;
         $IsError = "true";
         return $ValueIsInvalid;

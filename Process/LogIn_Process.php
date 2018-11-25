@@ -4,6 +4,7 @@ include('../DBConnection/DBconnection.php');
 
 $Username = $Password = "";
 $Username_Error = $Password_Error = $Login_Error= "";
+$dbUsername = $dbUsername = $dbPassword = $dbadminFlag = ""; 
 $IsError = "false";
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
@@ -21,7 +22,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     }
     if (!filter_var($InputValue, FILTER_VALIDATE_EMAIL)) {
         $Username_Error = "Invalid Username";
-        $Login_Error = "";
         $IsError = "true";
     }
 
@@ -55,6 +55,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         if ($Username == $dbUsername && $Password == $dbPassword)
         {
 
+
             echo $Username . " : " . $dbUsername . "<br>";
             echo $Password . " : " . $dbPassword . "<br>";
             echo $dbadminFlag . "<br>";
@@ -69,6 +70,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
             else if($dbadminFlag == 0){
                 echo "User is logged in";
             }
+
+            $sql = "SELECT fname FROM USER WHERE userID = '$userId'";
+            $result = mysqli_query($dbCon, $sql);
+
+            if (mysqli_num_rows($result) > 0) {
+                // output data of each row
+                while($row = mysqli_fetch_assoc($result)) {
+                    $_SESSION['fname'] = $row["fname"];
+                }
+            }
+            echo $Username . " : " . $_SESSION['fname'] . "<br>";
+
             header('Location: index.php');
         }
         else
@@ -76,8 +89,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 $_SESSION['loggedIn'] = "False";
                 $_SESSION['adminFlag'] = 0;
                 $message = "Username and/or Password incorrect.\\nTry again.";
-            echo "<script type='text/javascript'>alert('$message');</script>";
+            //echo "<script type='text/javascript'>alert('$message');</script>";
             $Password = "";
+            $Login_Error = "Invalid Login Credentials, Try Again!" ;
 
         }
 
