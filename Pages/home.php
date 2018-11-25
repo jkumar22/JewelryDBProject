@@ -1,4 +1,4 @@
-<?php include('home.php.php'); ?>
+<?php include(''); ?>
 <!DOCTYPE html>
 <html>
 <head>

@@ -5,7 +5,7 @@ include('../DBConnection/DBconnection.php');
 $Username = $Password = "";
 $Username_Error = $Password_Error = $Login_Error= "";
 $IsError = "false";
-
+$dbadminFlag="";
 session_start();
 
 if($_SERVER["REQUEST_METHOD"] == "POST")
