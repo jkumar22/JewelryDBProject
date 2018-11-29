@@ -33,13 +33,14 @@
                 </select>
 
             <label for="color"><b>Color</b></label>
-            <select name="color" id="colot">
+            <select name="color" id="color">
                 <option value="" selected="selected">Select</option>
                 <option value="">Gold</option>
-                <option value="">Silver</option></select>
+                <option value="">Silver</option></select>*
 
             <label for="BabyName"><b>Baby's Name</b></label>
-            <input type="text" placeholder="Enter Baby's Name" name="BabyName" autofocus>
+            <input type="text" placeholder="Enter Baby's Name" name="BabyName" autofocus required>
+            <p><b>Price: 17$</b></p>
             <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
 
         </div>
@@ -61,6 +62,7 @@
 
             <label for="BabyName"><b>Baby's Name</b></label>
             <input type="text" placeholder="Enter Baby's Name" name="BabyName" autofocus>
+            <p><b>Price: 25$</b></p>
             <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
 
         </div>
@@ -82,9 +84,147 @@
 
             <label for="BabyName"><b>Baby's Name</b></label>
             <input type="text" placeholder="Enter Baby's Name" name="BabyName" autofocus>
+            <p><b>Price:$35</b></p>
             <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
 
         </div>
 
 
     </div>
+    <div class="container">
+        <div id="btnContainer"
+    </div>
+    <br>
+
+    <div class="row">
+        <br>
+        <h2> MOTHER'S BRACELETS</h2>
+        <div class="column" style="background-color:antiquewhite;">
+
+            <img src="" alt="motherbracelet1" width="100" height="100" align="middle">
+            <p><h3>Size?</h3>
+            <select name="Size">
+                <option value="">Select...</option>
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+
+            <label for="birthstone"><b>Need Birthstone?</b></label>
+            <select name="birthstone" id="birthstone">
+                <option value="" selected="selected">Select</option>
+                <option value="">Yes</option>
+                <option value="">No</option></select>
+
+
+            <label for="color"><b>Color</b></label>
+            <select name="color" id="color">
+                <option value="" selected="selected">Select</option>
+                <option value="">Blue</option>
+                <option value="">Red</option>
+                <option value="">White</option>
+                <option value="">Green</option>
+
+            </select>
+
+            <label for="shape"><b>Shape</b></label>
+            <select name="shape" id="shape">
+                <option value="" selected="selected">Select</option>
+                <option value="">circle</option>
+                <option value="">oval</option>
+                <option value="">triangle</option>
+                <option value="">random</option>
+            </select>
+            <p><b>Price: $117</b></p>
+            <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
+        </div>
+        <div class="column" style="background-color:white;">
+
+            <img src="" alt="motherbracelet2" width="100" height="100" align="middle">
+            <p><h3>Size?</h3>
+            <select name="Size">
+                <option value="">Select...</option>
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+
+            <label for="birthstone"><b>Need Birthstone?</b></label>
+            <select name="birthstone" id="birthstone">
+                <option value="" selected="selected">Select</option>
+                <option value="">Yes</option>
+                <option value="">No</option></select>
+
+
+            <label for="color"><b>Color</b></label>
+            <select name="color" id="color">
+                <option value="" selected="selected">Select</option>
+                <option value="">Blue</option>
+                <option value="">Red</option>
+                <option value="">White</option>
+                <option value="">Green</option>
+
+            </select>
+
+            <label for="shape"><b>Shape</b></label>
+            <select name="shape" id="shape">
+                <option value="" selected="selected">Select</option>
+                <option value="">circle</option>
+                <option value="">oval</option>
+                <option value="">triangle</option>
+                <option value="">random</option>
+            </select>
+            <p><b>Price: 217$</b></p>
+            <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
+        </div>
+        <div class="column" style="background-color:antiquewhite;">
+
+            <img src="" alt="motherbracelet3" width="100" height="100" align="middle">
+            <p><h3>Size?</h3>
+            <select name="Size">
+                <option value="">Select...</option>
+                <option value="XS">XS</option>
+                <option value="S">S</option>
+                <option value="M">M</option>
+                <option value="L">L</option>
+                <option value="XL">XL</option>
+            </select>
+
+            <label for="birthstone"><b>Need Birthstone?</b></label>
+            <select name="birthstone" id="birthstone">
+                <option value="" selected="selected">Select</option>
+                <option value="">Yes</option>
+                <option value="">No</option></select>
+
+
+            <label for="color"><b>Color</b></label>
+            <select name="color" id="color">
+                <option value="" selected="selected">Select</option>
+                <option value="">Blue</option>
+                <option value="">Red</option>
+                <option value="">White</option>
+                <option value="">Green</option>
+
+            </select>
+
+            <label for="shape"><b>Shape</b></label>
+            <select name="shape" id="shape">
+                <option value="" selected="selected">Select</option>
+                <option value="">circle</option>
+                <option value="">oval</option>
+                <option value="">triangle</option>
+                <option value="">random</option>
+            </select>
+            <p><b>Price: 127$</b></p>
+            <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
+        </div>
+
+
+    </div>
+</form>
+</body>
+</html>
