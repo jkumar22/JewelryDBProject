@@ -23,8 +23,7 @@
         <div class="column" style="background-color:antiquewhite;">
 
             <img src="pearlring.jpg" alt="earring1" width="100" height="100" align="middle">
-            <p><b>Price: 7$</b></p>
-            <a href="#" class="button">Add to cart</a>
+            <p><b>Price: 7$</b></p>            <a href="#" class="button">Add to cart</a>
         </div>
 
         <div class="column" style="background-color:white;">
@@ -72,10 +71,10 @@
             <h2> BABY BRACELETS</h2>
             <div class="column" style="background-color:antiquewhite;">
 
-                <img src="pearlring.jpg" alt="earring1" width="100" height="100" align="middle">
+                <img src="Images/pearlring.jpg" alt="earring1" width="100" height="100" align="middle">
                 <p><b>Price: 7$</b></p>
 
-                <button type="button" name="Customize" onClick="document.location.href='braceletcutomize.php';"class="Customize"> Customize</button>
+                <button type="button" name="Customize" onClick="document.location.href='Customizebracelet.php';"class="Customize"> Customize</button>
 
             </div>
 
