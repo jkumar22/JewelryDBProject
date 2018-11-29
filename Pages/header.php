@@ -1,46 +1,51 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-    <title>MLK Volunteer</title>
+    <title>Awesome Jewelry</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel='stylesheet' href='../styles/style.css' />
 </head>
-<div id="wrapperHeader">
-    <div id="header">
-        <div class = "center">
-        </div>
-    </div>
-</div>
     <body>
     <ul>
-        <li><a class="active" href="index.php">Home</a></li>
-
+        <li class="<?php if($currentPage =='home'){echo 'active';}?>"> <a href="index.php">Home</a> </li>
         <?php
-        session_start();
-        if($_SESSION['adminFlag'] == 1 )
+        if(isset($_SESSION['loggedIn']))
         {
+            if($_SESSION['adminFlag'] == 1 )
+            { 
         ?>
-            <li><a href="Report.php">Report</a></li>
-            <li><a href="RegisteredUserReport.php">UserTable</a></li>
-        <?php }?>
+                    <li class="<?php if($currentPage =='Report'){echo 'active';}?>"> <a href="Report.php">Report</a></li>
+                <li class="<?php if($currentPage =='Registered User'){echo 'active';}?>"> <a href="RegisteredUserReport.php">Registered User</a></li>
+        <?php 
+            } 
+        } 
+        ?>
 
-        <li><a href="AboutUs.php">About US</a></li>
-
-        <li class="active" style="float:right"><a href="">Cart</a></li>
-
-
+        <li class="<?php if($currentPage =='About'){echo 'active';}?>"><a href="AboutUs.php">About US</a></li>
+        <li class="<?php if($currentPage =='cart'){echo 'active';}?>" style="float:right"><a href="Cart.php">Cart</a></li>
 
         <?php
-        session_start();
-        if($_SESSION['loggedIn'] == "True" )
-        {
-            ?>
-            <li style="float:right"><a href="../Process/LogOut_Process.php">Logout</a></li>
-        <?php }else{ ?>
-            <li style="float:right"><a href="Register.php">Register</a></li>
-            <li style="float:right"><a href="LogIn.php">LogIn</a></li>
-        <?php } ?>
+            if(isset($_SESSION['loggedIn']))
+            {
+                if($_SESSION['loggedIn'] == "True" )
+                {
+                    ?>
+                    <li style="float:right"><a href="../Process/LogOut_Process.php">Logout</a></li>
+                    <li style="float:right"><a><?php echo $_SESSION['fname'] ?> </a></li>
+
+                    <?php 
+                }
+                else{ ?>
+                    <li style="float:right" class="<?php if($currentPage =='Register'){echo 'active';}?>"> <a href="Register.php">Register</a></li>
+                    <li style="float:right" class="<?php if($currentPage =='LogIn'){echo 'active';}?>"> <a href="LogIn.php">LogIn</a></li>
+                    <?php 
+                } 
+            }else{ ?>
+                    <li style="float:right" class="<?php if($currentPage =='Register'){echo 'active';}?>"> <a href="Register.php">Register</a></li>
+                    <li style="float:right" class="<?php if($currentPage =='LogIn'){echo 'active';}?>"> <a href="LogIn.php">LogIn</a></li>
+        <?php }?>
 
     </ul>
     </body>

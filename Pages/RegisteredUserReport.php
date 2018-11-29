@@ -2,6 +2,8 @@
 include('../DBConnection/DBconnection.php');
 
 $sql = $dbCon ->query("SELECT * FROM USER ORDER BY UserID DESC");
+$loginSQL = $dbCon ->query("SELECT * FROM LOGIN ORDER BY UserID DESC");
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -10,7 +12,7 @@ $sql = $dbCon ->query("SELECT * FROM USER ORDER BY UserID DESC");
 </head>
 
 <body>
-<?php include 'header.php'; ?>
+<?php $currentPage = 'Registered User'; include 'header.php'; ?>
 
 <form class="modal-content">
     <div class="container">
@@ -21,6 +23,7 @@ $sql = $dbCon ->query("SELECT * FROM USER ORDER BY UserID DESC");
 
             <table id = "user_table" >
                 <tr >
+                    <th>ID</th>                    
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
@@ -43,6 +46,7 @@ $sql = $dbCon ->query("SELECT * FROM USER ORDER BY UserID DESC");
                 <tr id="rows<?php echo $rows['UserID'];?>">
 
                     <?php
+                    $ID = $rows['userID'];                    
                     $Fname = $rows['fname'];
                     $Lame = $rows['lname'];
                     $Email = $rows['email'];
@@ -54,6 +58,7 @@ $sql = $dbCon ->query("SELECT * FROM USER ORDER BY UserID DESC");
                     $Country = $rows['country'];
                     $Date = $rows['date'];
                     ?>
+                    <td><?php echo $ID?></td>
                     <td><?php echo $Fname?></td>
                     <td><?php echo $Lame?></td>
                     <td><?php echo $Email?></td>
@@ -73,7 +78,49 @@ $sql = $dbCon ->query("SELECT * FROM USER ORDER BY UserID DESC");
                     }
                     ?>
             </table>
+        </br>
+        <h2>Login Table</h2>
+        <p>List of user name and password</p>
+
+
+            <table id = "user_table" >
+                <tr >
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Password</th>
+                    <th>AdminFlag</th>
+                </tr>
+
+                <!-- looping each agency in each row -->
+                <?php
+                if($loginSQL ->num_rows != 0)
+                {
+                while ($rows = $loginSQL->fetch_assoc())
+                {
+                ?>
+                <tr id="rows<?php echo $rows['UserID'];?>">
+
+                    <?php
+                    $ID = $rows['userID'];
+                    $Email = $rows['email'];
+                    $Password = $rows['password'];
+                    $adminFlag = $rows['adminFlag'];
+                    ?>
+                    <td><?php echo $ID?></td>
+                    <td><?php echo $Email?></td>
+                    <td><?php echo $Password?></td>
+                    <td><?php echo $adminFlag?></td>
+                    <?php
+                    }
+                    }
+                    else
+                    {
+                        echo "No data available at this time";
+                    }
+                    ?>
+            </table>
         </form>
+
     </Div>
 </form>
 </body>
