@@ -230,7 +230,7 @@
 
         <div class="row">
             <br>
-            <h2> GM BRACELETS</h2>
+            <h2>GMBRACELETS</h2>
             <div class="column" style="background-color:antiquewhite;">
 
                 <img src="Images/gm1.jpg" alt="GMBraclets1" width="100" height="100" align="middle">
