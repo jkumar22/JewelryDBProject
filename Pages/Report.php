@@ -10,8 +10,8 @@
 <?php $currentPage ='Report'; include 'header.php'; ?>
 <form class="modal-content" method="post" style="width:50%" action= "<?= $_SERVER['PHP_SELF']; ?>" autocomplete="on">
     <div class="container">
-        <h2>Welcome to Awesome Jewelry Yearly Report!</h2>
-        <p>We are comming for you Amazon!.</p>
+        <h2>Thank you for your time.</h2>
+        <p>Your responses and selections have been submitted.</p>
         <hr>
     </div>
 </form>
