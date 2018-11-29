@@ -20,7 +20,7 @@
            <div class="row">
         <h2>EARRINGS</h2>
           <div class="column" style="background-color:antiquewhite;">
-            <img src="" alt="earring1" width="100" height="100" align="middle">
+              <img src="C:\Users\HarshalDhamade\PhpstormProjects\JewelryDBProject\Images\cb4.jpg" alt="earring1" width="100" height="100" align="middle">
             <p><b>Price: 7$</b></p>
               <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
           </div>
@@ -74,7 +74,7 @@
                 <button type="button" name="Customize" onClick="document.location.href='Customizebracelet.php';"class="Customize"> Customize</button>
 
             </div>
-              <div class="column" style="background-color:white;">
+              <div class="column" style="background-color:antiquewhite;">
                   <img src="" alt="BabyBracelet3" width="100" height="100" align="middle">
                   <button type="button" name="Customize" onClick="document.location.href='Customizebracelet.php';"class="Customize"> Customize</button>
 
@@ -143,6 +143,48 @@
                     </style>
                 </div>
 
+            </div>
+            <div>
+                <div class="container">
+                    <div id="btnContainer"
+                </div>
+                <br>
+
+                <div class="row">
+                    <br>
+                    <h2> MOTHER'S BRACELETS</h2>
+                    <div class="column" style="background-color:antiquewhite;">
+                        <img src="" alt="MotherBracelet1" width="100" height="100" align="middle">
+                        <button type="button" name="Customize" onClick="document.location.href='Customizebracelet.php';"class="Customize"> Customize</button>
+
+                    </div>
+                    <div class="column" style="background-color:white;">
+                        <img src="" alt="MotherBracelet2" width="100" height="100" align="middle">
+                        <button type="button" name="Customize" onClick="document.location.href='Customizebracelet.php';"class="Customize"> Customize</button>
+
+                    </div>
+                    <div class="column" style="background-color:antiquewhite;">
+                        <img src="" alt="MotherBracelet3" width="100" height="100" align="middle">
+                        <button type="button" name="Customize" onClick="document.location.href='Customizebracelet.php';"class="Customize"> Customize</button>
+
+                    </div>
+
+
+                    <style>
+                        .button {
+                            background-color: #4CAF50;
+                            border: none;
+                            color: white;
+                            padding: 15px 32px;
+                            text-align: center;
+                            text-decoration: none;
+                            display: inline-block;
+                            font-size: 14px;
+                            margin: 4px 2px;
+                            cursor: pointer;
+
+                    </style>
+                </div>
             </div>
 
 </form>

@@ -23,7 +23,7 @@
         <h2> BABY BRACELETS</h2>
         <div class="column" style="background-color:antiquewhite;">
 
-            <img src="Images/pearlring.jpg" alt="babybracelet1" width="100" height="100" align="middle">
+            <img src="" alt="babybracelet1" width="100" height="100" align="middle">
             <p><h3>Size?</h3>
                 <select name="Size">
                     <option value="">Select...</option>
@@ -67,7 +67,7 @@
 
         </div>
         <div class="column" style="background-color:antiquewhite;">
-            <img src="img1" alt="babybracelet2" width="100" height="100" align="middle">
+            <img src="" alt="babybracelet2" width="100" height="100" align="middle">
             <p><h3>Size?</h3>
             <select name="Size">
                 <option value="">Select...</option>
