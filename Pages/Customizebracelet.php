@@ -223,7 +223,7 @@
             <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
         </div>
 
-        iv class="container">
+        <div class="container">
         <div id="btnContainer">
         </div>
         <br>
