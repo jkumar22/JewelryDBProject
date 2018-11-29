@@ -374,7 +374,7 @@
                 <div class="column" style="background-color:antiquewhite;">
 
                     <img src="..\Images\W3.jpg" alt="W3" width="100" height="100" align="middle">
-                    <p><h3>Size?</h3>
+                    <p><h3>Size</h3>
                     <select name="Size">
                         <option value="">Select...</option>
                         <option value="XS">XS</option>
