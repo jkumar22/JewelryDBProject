@@ -343,6 +343,35 @@
         <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
 
     </div>
+    </div>
+        <div class="container">
+            <div id="btnContainer">
+            </div>
+            <br>
+
+            <div class="row">
+                <br>
+                <h2>WEDDING BRACELETS</h2>
+                <div class="column" style="background-color:antiquewhite;">
+                    <h6>WeddingBracelet1</h6>
+                    <img src="..\Images\W1.jpg" alt="W1" width="100" height="100" align="middle">
+                    <button type="button" name="Customize" onClick="document.location.href='Customizebracelet.php';"class="Customize"> Customize</button>
+
+                </div>
+                <div class="column" style="background-color:white;">
+                    <h6>WeddingBracelet2</h6>
+                    <img src="..\Images\W2.jpg" alt="W2" width="100" height="100" align="middle">
+                    <button type="button" name="Customize" onClick="document.location.href='Customizebracelet.php';"class="Customize"> Customize</button>
+
+                </div>
+                <div class="column" style="background-color:antiquewhite;">
+                    <h6>WeddingBracelet3</h6>
+                    <img src="..\Images\W3.jpg" alt="W3" width="100" height="100" align="middle">
+                    <button type="button" name="Customize" onClick="document.location.href='Customizebracelet.php';"class="Customize"> Customize</button>
+
+                </div>
+            </div>
+
 
 </form>
 </body>
