@@ -107,21 +107,21 @@
 
                 <br>
                 <div class="row">
-                    <h2>NECKLACES</h2>
+                    <h2>SETS</h2>
                     <div class="column" style="background-color:antiquewhite;">
-                        <img src="" alt="necklace1" width="100" height="100" align="middle">
+                        <img src="" alt="set1" width="100" height="100" align="middle">
                         <p><b>Price:30$</b></p>
                         <a href="#" class="button">Add to cart</a>
                     </div>
                     <div class="column" style="background-color:white;">
 
-                        <img src="" alt="necklace2" width="100" height="100" align="middle">
+                        <img src="" alt="set2" width="100" height="100" align="middle">
                         <p><b>Price: 45$</b></p>
                         <a href="#" class="button">Add to cart</a>
                     </div>
                     <div class="column" style="background-color:antiquewhite;">
 
-                        <img src="" alt="necklace3" width="100" height="100" align="middle">
+                        <img src="" alt="set3" width="100" height="100" align="middle">
                         <p><b>Price: 65$</b></p>
                         <a href="#" class="button">Add to cart</a>
                     </div>
