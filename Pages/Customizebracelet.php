@@ -233,7 +233,7 @@
             <h2>GMBRACELETS</h2>
             <div class="column" style="background-color:antiquewhite;">
 
-                <img src="Images/gm1.jpg" alt="GMBraclets1" width="100" height="100" align="middle">
+                <img src="..\Images\gm5.jpg" alt="gm5" width="100" height="100" align="middle">
                 <p><h3>Size</h3>
                 <select name="Size">
                     <option value="">Select...</option>
@@ -251,13 +251,13 @@
                     <option value="">Cyan</option>
                     <option value="">Brown </option>
                 </select>
-
+                <p><b>Price: 125$</b></p>
 
                 <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
 
             </div>
             <div class="column" style="background-color:white;">
-                <img src="gm2" alt="GMbraclet2" width="100" height="100" align="middle">
+                <img src="..\Images\gm1.jpg" alt="gm5" width="100" height="100" align="middle">
                 <p><h3>Size</h3>
                 <select name="Size">
                     <option value="">Select...</option>
@@ -275,13 +275,13 @@
                     <option value="">Green</option>
                     <option value="">Cyan</option>
                 </select>
-
+                <p><b>Price: 125$</b></p>
 
                 <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
 
             </div>
             <div class="column" style="background-color:antiquewhite;">
-                <img src="gm2" alt="GMbraclet3" width="100" height="100" align="middle">
+                <img src="..\Images\gm3.jpg" alt="gm5" width="100" height="100" align="middle">
                 <p><h3>Size</h3>
                 <select name="Size">
                     <option value="">Select...</option>
@@ -299,10 +299,110 @@
                     <option value="">Blue</option>
                 </select>
 
-
+                <p><b>Price: 187$</b></p>
                 <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
+            </div>
 
-    </div>
+        </div>
+        <div class="container">
+            <div id="btnContainer"
+            </div>
+            <br>
+
+            <div class="row">
+                <br>
+                <h2> WEDDING BRACELETS</h2>
+                <div class="column" style="background-color:antiquewhite;">
+
+                    <img src="..\Images\W1.jpg" alt="W1" width="100" height="100" align="middle">
+                    <p><h3>Size</h3>
+                    <select name="Size">
+                        <option value="">Select...</option>
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+
+
+
+                    <label for="strand"><b>strand</b></label>
+                    <select name="strand" id="strand">
+                        <option value="" selected="selected">Select</option>
+                        <option value="">1</option>
+                        <option value="">2</option>
+                        <option value="">3</option>
+
+
+                    </select>
+
+
+                    <p><b>Price: $197</b></p>
+                    <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
+                </div>
+                <div class="column" style="background-color:white;">
+
+                    <img src="..\Images\W2.jpg" alt="W2" width="100" height="100" align="middle">
+                    <p><h3>Size</h3>
+                    <select name="Size">
+                        <option value="">Select...</option>
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+
+
+
+
+                    <label for="strand"><b>strand</b></label>
+                    <select name="strand" id="strand">
+                        <option value="" selected="selected">Select</option>
+                        <option value="">one</option>
+                        <option value="">two</option>
+                        <option value="">three</option>
+
+
+                    </select>
+
+
+                    <p><b>Price: 217$</b></p>
+                    <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
+                </div>
+                <div class="column" style="background-color:antiquewhite;">
+
+                    <img src="..\Images\W3.jpg" alt="W3" width="100" height="100" align="middle">
+                    <p><h3>Size?</h3>
+                    <select name="Size">
+                        <option value="">Select...</option>
+                        <option value="XS">XS</option>
+                        <option value="S">S</option>
+                        <option value="M">M</option>
+                        <option value="L">L</option>
+                        <option value="XL">XL</option>
+                    </select>
+
+
+
+                    <label for="strand"><b>strand</b></label>
+                    <select name="strand" id="strand">
+                        <option value="" selected="selected">Select</option>
+                        <option value="">one</option>
+                        <option value="">two</option>
+                        <option value="">three</option>
+
+                    </select>
+
+
+                    <p><b>Price: 227$</b></p>
+                    <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
+                </div>
+
+
+            </div>
+
 </form>
 </body>
 </html>

@@ -236,7 +236,7 @@
                 <br>
                 <h2>SETS</h2>
                 <div class="column" style="background-color:antiquewhite;">
-                    <h2>SET1</h2>
+                    <h6>Set1</h6>
 
                     <img src="..\Images\s5.jpg"alt="s5" width="100" height="100" align="middle">
                     <p>Price $50</p>
@@ -244,7 +244,7 @@
                 </div>
 
                 <div class="column" style="background-color:white;">
-                    <h2>SET2</h2>
+                    <h6>Set2</h6>
 
                     <img src="..\Images\s3.jpg"alt="s3" width="100" height="100" align="middle">
                     <p>Price $75</p>
@@ -255,7 +255,7 @@
                 <div class="column" style="background-color:antiquewhite;">
 
 
-                    <h2>SET3</h2>
+                    <h6>Set3</h6>
                 <img src="..\Images\s1.jpg"alt="s1" width="100" height="100" align="middle">
                     <p>Price $65</p>
                    <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart"> Add to Cart</button>
@@ -287,16 +287,19 @@
                         <br>
                         <h2>GMBRACELETS</h2>
                         <div class="column" style="background-color:antiquewhite;">
+                            <h6>GMBracelet1</h6>
                             <img src="..\Images\gm5.jpg" alt="gm5" width="100" height="100" align="middle">
                             <button type="button" name="Customize" onClick="document.location.href='Customizebracelet.php';"class="Customize"> Customize</button>
 
                         </div>
                         <div class="column" style="background-color:white;">
+                            <h6>GMBracelet2</h6>
                             <img src="..\Images\gm1.jpg" alt="gm1" width="100" height="100" align="middle">
                             <button type="button" name="Customize" onClick="document.location.href='Customizebracelet.php';"class="Customize"> Customize</button>
 
                         </div>
                         <div class="column" style="background-color:antiquewhite;">
+                            <h6>GMBracelet3</h6>
                             <img src="..\Images\gm3.jpg" alt="gm3" width="100" height="100" align="middle">
                             <button type="button" name="Customize" onClick="document.location.href='Customizebracelet.php';"class="Customize"> Customize</button>
 
@@ -316,7 +319,7 @@
 
     <div class="row">
         <div class="column" style="background-color:antiquewhite;">
-            <h2>NECKLACE1</h2>
+            <h6>NECKLACE1</h6>
 
             <img src="..\Images\n1.jpg"alt="n1" width="100" height="100" align="middle">
             <p>Price $50</p>
@@ -324,7 +327,7 @@
 
         </div>
         <div class="column" style="background-color:white;">
-            <h2>NECKLACE2</h2>
+            <h6>NECKLACE2</h6>
 
             <img src="..\Images\n2.jpg"alt="n2" width="100" height="100" align="middle">
             <p>Price $70</p>
@@ -333,7 +336,7 @@
         </div>
 
         <div class="column" style="background-color:antiquewhite;">
-        <h2>NECKLACE3</h2>
+        <h6>NECKLACE3</h6>
 
         <img src="..\Images\n3.jpg"alt="n3" width="100" height="100" align="middle">
         <p>Price $60</p>
