@@ -1,28 +1,17 @@
+<?php include('../DBConnection/DBconnection.php');?>
+
 <!DOCTYPE html>
 <html>
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        /* Create four equal columns that floats next to each other */
-        .column {
-            float: left;
-            width: 25%;
-            padding: 10px;
-            height: 300px; /* Should be removed. Only for demonstration */
-        }
-
-        /* Clear floats after the columns */
-        .row:after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="../Style/styleSheet.css">
 </head>
+
+<body>
+<?php $currentPage ='home'; include 'header.php'; ?>
+<form class="modal-content" method="post" style="width:50%" action= "<?= $_SERVER['PHP_SELF']; ?>" autocomplete="on">
+    <div class="container">
+        <h2>Sets!</h2>
+    </div>
 <body>
 
 <h2>SETS</h2>

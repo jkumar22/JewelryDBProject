@@ -56,7 +56,7 @@
                 <option value="L">L</option>
             </select>
 
-            <label for="color"><b>Color</b></label>
+            <label for="color"><b>GEM Color</b></label>
             <select name="color" id="colot">
                 <option value="" selected="selected">Select</option>
 
@@ -80,7 +80,7 @@
                 <option value="L">L</option>
             </select>
 
-            <label for="color"><b>Color</b></label>
+            <label for="color"><b>GEM Color</b></label>
             <select name="color" id="colot">
                 <option value="" selected="selected">Select</option>
                 <option value="">Cyan</option>
