@@ -305,7 +305,7 @@
 
         </div>
         <div class="container">
-            <div id="btnContainer"
+            <div id="btnContainer">
             </div>
             <br>
 
