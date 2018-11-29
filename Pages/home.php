@@ -238,7 +238,7 @@
                 <div class="column" style="background-color:antiquewhite;">
                     <h2>SET1</h2>
 
-                    <img src="s5.jpg"/>
+                    <img src="../Imagess5.jpg"alt="GM1" width="100" height="100" align="middle">/>
                     <p>Price $50</p>
                     <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart"> Add to Cart</button>
                 </div>
@@ -246,7 +246,7 @@
                 <div class="column" style="background-color:white;">
                     <h2>SET2</h2>
 
-                    <img src="s3.jpg"/>
+                    <img src="../Imagess3.jpg"alt="GM1" width="100" height="100" align="middle">/>
                     <p>Price $75</p>
                     <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart"> Add to Cart</button>
                 </div>
@@ -256,8 +256,8 @@
 
 
                     <h2>SET3</h2>
-                <img src="s1.jpg"/>
-                    <p>Price $100</p>
+                <img src="../Imagess1.jpg"alt="GM1" width="100" height="100" align="middle">/>
+                    <p>Price $65</p>
                    <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart"> Add to Cart</button>
                 </div>
             </div>
@@ -285,19 +285,19 @@
 
                     <div class="row">
                         <br>
-                        <h2> GM BRACELETS</h2>
+                        <h2>GMBRACELETS</h2>
                         <div class="column" style="background-color:antiquewhite;">
-                            <img src="" alt="GM1" width="100" height="100" align="middle">
+                            <img src="../Imagesgm5" alt="GM1" width="100" height="100" align="middle">
                             <button type="button" name="Customize" onClick="document.location.href='Customizebracelet.php';"class="Customize"> Customize</button>
 
                         </div>
                         <div class="column" style="background-color:white;">
-                            <img src="" alt="GM2" width="100" height="100" align="middle">
+                            <img src="../Imagesgm1" alt="GM2" width="100" height="100" align="middle">
                             <button type="button" name="Customize" onClick="document.location.href='Customizebracelet.php';"class="Customize"> Customize</button>
 
                         </div>
                         <div class="column" style="background-color:antiquewhite;">
-                            <img src="" alt="GM3" width="100" height="100" align="middle">
+                            <img src="../Imagesgm3" alt="GM3" width="100" height="100" align="middle">
                             <button type="button" name="Customize" onClick="document.location.href='Customizebracelet.php';"class="Customize"> Customize</button>
 
                         </div>
@@ -318,7 +318,7 @@
         <div class="column" style="background-color:antiquewhite;">
             <h2>NECKLACE1</h2>
 
-            <img src="n1.jpg"/>
+            <img src="../Imagesn1.jpg"alt="GM1" width="100" height="100" align="middle">/>
             <p>Price $50</p>
             <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
 
@@ -326,7 +326,7 @@
         <div class="column" style="background-color:white;">
             <h2>NECKLACE2</h2>
 
-            <img src="n2.jpg"/>
+            <img src="../Imagesn2.jpg"alt="GM1" width="100" height="100" align="middle">/>
             <p>Price $70</p>
             <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
 
@@ -335,7 +335,7 @@
         <div class="column" style="background-color:white;">
         <h2>NECKLACE3</h2>
 
-        <img src="n3.jpg"/>
+        <img src="../Imagesn3.jpg"alt="GM1" width="100" height="100" align="middle">/>
         <p>Price $60</p>
         <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
 
