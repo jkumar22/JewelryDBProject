@@ -222,6 +222,7 @@
             <p><b>Price: 127$</b></p>
             <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
         </div>
+    </div>
 
         <div class="container">
         <div id="btnContainer">
