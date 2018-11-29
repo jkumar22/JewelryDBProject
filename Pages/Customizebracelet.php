@@ -23,7 +23,7 @@
         <h2> BABY BRACELETS</h2>
         <div class="column" style="background-color:antiquewhite;">
 
-            <img src="" alt="babybracelet1" width="100" height="100" align="middle">
+            <img src="..\Images\cb1.jpg" alt="babybracelet1" width="100" height="100" align="middle">
             <p><h3>Size?</h3>
                 <select name="Size">
                     <option value="">Select...</option>
@@ -45,7 +45,7 @@
 
         </div>
         <div class="column" style="background-color:white;">
-            <img src="img1" alt="babybracelet2" width="100" height="100" align="middle">
+            <img src="..\Images\cb2.jpg" alt="babybracelet2" width="100" height="100" align="middle">
             <p><h3>Size?</h3>
             <select name="Size">
                 <option value="">Select...</option>
@@ -67,7 +67,7 @@
 
         </div>
         <div class="column" style="background-color:antiquewhite;">
-            <img src="" alt="babybracelet2" width="100" height="100" align="middle">
+            <img src="..\Images\cb3.jpg" alt="babybracelet2" width="100" height="100" align="middle">
             <p><h3>Size?</h3>
             <select name="Size">
                 <option value="">Select...</option>
@@ -101,7 +101,7 @@
         <h2> MOTHER'S BRACELETS</h2>
         <div class="column" style="background-color:antiquewhite;">
 
-            <img src="" alt="motherbracelet1" width="100" height="100" align="middle">
+            <img src="..\Images\mb6.jpg" alt="motherbracelet1" width="100" height="100" align="middle">
             <p><h3>Size?</h3>
             <select name="Size">
                 <option value="">Select...</option>
@@ -142,7 +142,7 @@
         </div>
         <div class="column" style="background-color:white;">
 
-            <img src="" alt="motherbracelet2" width="100" height="100" align="middle">
+            <img src="..\Images\mb2.jpg" alt="motherbracelet2" width="100" height="100" align="middle">
             <p><h3>Size?</h3>
             <select name="Size">
                 <option value="">Select...</option>
@@ -183,7 +183,7 @@
         </div>
         <div class="column" style="background-color:antiquewhite;">
 
-            <img src="" alt="motherbracelet3" width="100" height="100" align="middle">
+            <img src="..\Images\mb3.jpg" alt="motherbracelet3" width="100" height="100" align="middle">
             <p><h3>Size?</h3>
             <select name="Size">
                 <option value="">Select...</option>

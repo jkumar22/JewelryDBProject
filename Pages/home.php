@@ -20,21 +20,21 @@
            <div class="row">
         <h2>EARRINGS</h2>
           <div class="column" style="background-color:antiquewhite;">
-              <img src="C:\Users\HarshalDhamade\PhpstormProjects\JewelryDBProject\Images\cb4.jpg" alt="earring1" width="100" height="100" align="middle">
+              <img src="..\Images\er.jpg" alt="earring1" width="100" height="100" align="middle" >
             <p><b>Price: 7$</b></p>
               <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
           </div>
             <div class="column" style="background-color:white;">
 
-            <img src="" alt="earring2" width="100" height="100" align="middle">
+            <img src="..\Images\er2.jpg" alt="earring2" width="100" height="100" align="middle">
             <p><b>Price: 15$</b></p>
                 <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart"> Add to Cart</button>
             </div>
             <div class="column" style="background-color:antiquewhite;">
 
-                <img src="" alt="earring3" width="100" height="100" align="middle">
+                <img src="..\Images\er4.jpg" alt="earring3" width="100" height="100" align="middle">
                 <p><b>Price: 15$</b></p>
-                <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart"> Add to Cart</button>
+                <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';class="Add to Cart"> Add to Cart</button>
             </div>
 
 
@@ -65,17 +65,17 @@
             <br>
             <h2> BABY BRACELETS</h2>
             <div class="column" style="background-color:antiquewhite;">
-                <img src="" alt="BabyBracelet1" width="100" height="100" align="middle">
+                <img src="..\Images\cb1.jpg" alt="BabyBracelet1" width="100" height="100" align="middle">
                 <button type="button" name="Customize" onClick="document.location.href='Customizebracelet.php';"class="Customize"> Customize</button>
 
            </div>
             <div class="column" style="background-color:white;">
-                <img src="" alt="BabyBracelet2" width="100" height="100" align="middle">
+                <img src="..\Images\cb2.jpg" alt="BabyBracelet2" width="100" height="100" align="middle">
                 <button type="button" name="Customize" onClick="document.location.href='Customizebracelet.php';"class="Customize"> Customize</button>
 
             </div>
               <div class="column" style="background-color:antiquewhite;">
-                  <img src="" alt="BabyBracelet3" width="100" height="100" align="middle">
+                  <img src="..\Images\cb3.jpg" alt="BabyBracelet3" width="100" height="100" align="middle">
                   <button type="button" name="Customize" onClick="document.location.href='Customizebracelet.php';"class="Customize"> Customize</button>
 
               </div>
@@ -154,17 +154,17 @@
                     <br>
                     <h2> MOTHER'S BRACELETS</h2>
                     <div class="column" style="background-color:antiquewhite;">
-                        <img src="" alt="MotherBracelet1" width="100" height="100" align="middle">
+                        <img src="..\Images\mb6.jpg" alt="MotherBracelet1" width="100" height="100" align="middle">
                         <button type="button" name="Customize" onClick="document.location.href='Customizebracelet.php';"class="Customize"> Customize</button>
 
                     </div>
                     <div class="column" style="background-color:white;">
-                        <img src="" alt="MotherBracelet2" width="100" height="100" align="middle">
+                        <img src="..\Images\mb2.jpg" alt="MotherBracelet2" width="100" height="100" align="middle">
                         <button type="button" name="Customize" onClick="document.location.href='Customizebracelet.php';"class="Customize"> Customize</button>
 
                     </div>
                     <div class="column" style="background-color:antiquewhite;">
-                        <img src="" alt="MotherBracelet3" width="100" height="100" align="middle">
+                        <img src="..\Images\mb3.jpg" alt="MotherBracelet3" width="100" height="100" align="middle">
                         <button type="button" name="Customize" onClick="document.location.href='Customizebracelet.php';"class="Customize"> Customize</button>
 
                     </div>
@@ -175,7 +175,7 @@
                             background-color: #4CAF50;
                             border: none;
                             color: white;
-                            padding: 15px 32px;
+                            padding: 15px 15px;
                             text-align: center;
                             text-decoration: none;
                             display: inline-block;
