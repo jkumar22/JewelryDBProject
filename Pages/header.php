@@ -16,7 +16,7 @@
             if($_SESSION['adminFlag'] == 1 )
             { 
         ?>
-                <li class="<?php if($currentPage =='Report'){echo 'active';}?>"> <a href="Report.php">Report</a></li>
+                    <li class="<?php if($currentPage =='Report'){echo 'active';}?>"> <a href="Report.php">Report</a></li>
                 <li class="<?php if($currentPage =='Registered User'){echo 'active';}?>"> <a href="RegisteredUserReport.php">Registered User</a></li>
         <?php 
             } 
