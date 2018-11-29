@@ -303,8 +303,8 @@
                 <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
             </div>
 
-
-        <div class="container">
+        <div>
+           <div class="container">
             <div id="btnContainer">
             </div>
             <br>
@@ -400,8 +400,8 @@
                     <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
                 </div>
 
+            </div>
 
-           
 
 </form>
 </body>
