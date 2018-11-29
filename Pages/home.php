@@ -22,19 +22,19 @@
           <div class="column" style="background-color:antiquewhite;">
             <img src="" alt="earring1" width="100" height="100" align="middle">
             <p><b>Price: 7$</b></p>
-            <a href="#" class="button">Add to cart</a>
+              <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
           </div>
             <div class="column" style="background-color:white;">
 
             <img src="" alt="earring2" width="100" height="100" align="middle">
             <p><b>Price: 15$</b></p>
-            <a href="#" class="button">Add to cart</a>
+                <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart"> Add to Cart</button>
             </div>
             <div class="column" style="background-color:antiquewhite;">
 
-                <img src="" alt="earring2" width="100" height="100" align="middle">
+                <img src="" alt="earring3" width="100" height="100" align="middle">
                 <p><b>Price: 15$</b></p>
-                <a href="#" class="button">Add to cart</a>
+                <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart"> Add to Cart</button>
             </div>
 
 
