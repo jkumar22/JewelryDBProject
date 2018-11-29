@@ -36,10 +36,11 @@
             <select name="color" id="colot">
                 <option value="" selected="selected">Select</option>
                 <option value="">Gold</option>
-                <option value="">Silver</option></select>
+                <option value="">Silver</option></select>*
 
             <label for="BabyName"><b>Baby's Name</b></label>
             <input type="text" placeholder="Enter Baby's Name" name="BabyName" autofocus>
+            <p><b>Price: 17$</b></p>
             <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
 
         </div>
@@ -61,6 +62,7 @@
 
             <label for="BabyName"><b>Baby's Name</b></label>
             <input type="text" placeholder="Enter Baby's Name" name="BabyName" autofocus>
+            <p><b>Price: 25$</b></p>
             <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
 
         </div>
@@ -82,6 +84,7 @@
 
             <label for="BabyName"><b>Baby's Name</b></label>
             <input type="text" placeholder="Enter Baby's Name" name="BabyName" autofocus>
+            <p><b>Price:$35</b></p>
             <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
 
         </div>
