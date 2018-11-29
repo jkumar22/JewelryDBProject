@@ -12,7 +12,6 @@ if((isset($_SESSION['loggedIn'])) && ($_SESSION['loggedIn'] == "True" ))
     echo "<script>if(confirm('$message')){document.location.href='LogIn.php'}else{document.location.href='index.php'};</script>";
     //header('Location: LogIn.php');
 }
-
 ?>
 
 <!DOCTYPE html>
