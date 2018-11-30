@@ -22,7 +22,8 @@
           <div class="column" style="background-color:antiquewhite;">
               <img src="..\Images\er.jpg" alt="earring1" width="100" height="100" align="middle" >
             <p><b>Price: 7$</b></p>
-              <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
+              <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart" value="1">Add to Cart</button>
+
           </div>
             <div class="column" style="background-color:white;">
 
@@ -35,6 +36,18 @@
                 <img src="..\Images\er4.jpg" alt="earring3" width="100" height="100" align="middle">
                 <p><b>Price: 15$</b></p>
                 <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';class="Add to Cart"> Add to Cart</button>
+                <div class="rate">
+                    <input type="radio" id="star5" name="rate" value="5" />
+                    <label for="star5" title="text">4 stars</label>
+                    <input type="radio" id="star4" name="rate" value="4" />
+                    <label for="star4" title="text">4 stars</label>
+                    <input type="radio" id="star3" name="rate" value="3" />
+                    <label for="star3" title="text">3 stars</label>
+                    <input type="radio" id="star2" name="rate" value="2" />
+                    <label for="star2" title="text">2 stars</label>
+                    <input type="radio" id="star1" name="rate" value="1" />
+                    <label for="star1" title="text">1 star</label>
+                </div>
             </div>
 
 
@@ -175,33 +188,7 @@
                     </style>
                 </div>
             </div>
-            <div class="container">
-                <h2></h2>
 
-                <div>
-                    <div id="btnContainer">
-                </div>
-
-                <br>
-                <div class="row">
-                    <h2>SETS</h2>
-                    <div class="column" style="background-color:antiquewhite;">
-                        <img src="" alt="set1" width="100" height="100" align="middle">
-                        <p><b>Price:30$</b></p>
-                        <a href="#" class="button">Add to cart</a>
-                    </div>
-                    <div class="column" style="background-color:white;">
-
-                        <img src="" alt="set2" width="100" height="100" align="middle">
-                        <p><b>Price: 45$</b></p>
-                        <a href="#" class="button">Add to cart</a>
-                    </div>
-                    <div class="column" style="background-color:antiquewhite;">
-
-                        <img src="" alt="set3" width="100" height="100" align="middle">
-                        <p><b>Price: 65$</b></p>
-                        <a href="#" class="button">Add to cart</a>
-                    </div>
 
 
                     <style>
@@ -222,17 +209,9 @@
             </div>
             <div class="container">
                 <div id="btnContainer">
-
-
-
-
-            </div>
+                </div>
                 <br>
-
-
-
-
-            <div class="row">
+                <div class="row">
                 <br>
                 <h2>SETS</h2>
                 <div class="column" style="background-color:antiquewhite;">
@@ -304,45 +283,9 @@
                             <button type="button" name="Customize" onClick="document.location.href='Customizebracelet.php';"class="Customize"> Customize</button>
 
                         </div>
+                    </div>
 
 
-
-
-        </div>
-    </div>
-    <div class="container">
-        <div id="btnContainer">
-
-    </div>
-
-    <h2>NECKLACES</h2>
-
-    <div class="row">
-        <div class="column" style="background-color:antiquewhite;">
-            <h6>NECKLACE1</h6>
-
-            <img src="..\Images\n1.jpg"alt="n1" width="100" height="100" align="middle">
-            <p>Price $50</p>
-            <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
-
-        </div>
-        <div class="column" style="background-color:white;">
-            <h6>NECKLACE2</h6>
-
-            <img src="..\Images\n2.jpg"alt="n2" width="100" height="100" align="middle">
-            <p>Price $70</p>
-            <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
-
-        </div>
-
-        <div class="column" style="background-color:antiquewhite;">
-        <h6>NECKLACE3</h6>
-
-        <img src="..\Images\n3.jpg"alt="n3" width="100" height="100" align="middle">
-        <p>Price $60</p>
-        <button type="button" name="Add to Cart" onClick="document.location.href='Cart.php';"class="Add to Cart">Add to Cart</button>
-
-    </div>
     </div>
         <div class="container">
             <div id="btnContainer">
@@ -353,7 +296,7 @@
                 <br>
                 <h2>WEDDING BRACELETS</h2>
                 <div class="column" style="background-color:antiquewhite;">
-                    <h6>WeddingBracelet1</h6>
+                    <h2>WeddingBracelet1</h2>
                     <img src="..\Images\W1.jpg" alt="W1" width="100" height="100" align="middle">
                     <button type="button" name="Customize" onClick="document.location.href='Customizebracelet.php';"class="Customize"> Customize</button>
 
@@ -371,6 +314,12 @@
 
                 </div>
             </div>
+        </div>
+
+        <div class="container">
+        <div id="btnContainer">
+        </div>
+        <br>
 
 
 </form>
