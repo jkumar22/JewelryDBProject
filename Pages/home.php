@@ -109,21 +109,21 @@
 
                 <br>
                 <div class="row">
-                    <h2>SETS</h2>
+                    <h2>EVERYDAYSETS</h2>
                     <div class="column" style="background-color:antiquewhite;">
-                        <img src="" alt="set1" width="100" height="100" align="middle">
+                        <img src="../Images/er.jpg" alt="eset1" width="100" height="100" align="middle">
                         <p><b>Price:30$</b></p>
                         <a href="#" class="button">Add to cart</a>
                     </div>
                     <div class="column" style="background-color:white;">
 
-                        <img src="" alt="set2" width="100" height="100" align="middle">
+                        <img src="../Images/er5.jpg" alt="eset2" width="100" height="100" align="middle">
                         <p><b>Price: 45$</b></p>
                         <a href="#" class="button">Add to cart</a>
                     </div>
                     <div class="column" style="background-color:antiquewhite;">
 
-                        <img src="" alt="set3" width="100" height="100" align="middle">
+                        <img src="../Images/er3.jpg" alt="eset3" width="100" height="100" align="middle">
                         <p><b>Price: 65$</b></p>
                         <a href="#" class="button">Add to cart</a>
                     </div>
