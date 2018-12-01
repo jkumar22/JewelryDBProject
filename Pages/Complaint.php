@@ -1,11 +1,5 @@
+<?php include('../DBConnection/DBconnection.php');?>
 
-/**
- * Created by PhpStorm.
- * User: Deekshita
- * Date: 29-11-2018
- * Time: 11:55
- */
-<?php include('home.php.php'); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,21 +7,34 @@
 </head>
 
 <body>
-<?php include 'header.php'; ?>
+<?php $currentPage ='Complaint'; include 'header.php'; ?>
 <form class="modal-content" method="post" style="width:50%" action= "<?= $_SERVER['PHP_SELF']; ?>" autocomplete="on">
     <div class="container">
-        <h2> We're sorry for the inconvenience. </h2>
+        <h2>We're sorry for the inconvenience.</h2>
         <p>Let us know what went wrong to help serve you better!</p>
         <hr>
-    </div>
+               <!-- <span class="error"><?php echo $Login_Error ;?></span></br> -->
+                <label><p><u>Please provide more information about the Product</u></p></label></br>
 
-<label for="complaint"><b>Complaint</b></label>
-        <input type="text" name="Order ID" placeholder="Enter Order ID" autofocus>
-    <input type="text" name="Product ID" placeholder="Enter Product ID" autofocus>
-    <input type="text" name="Complaint" placeholder="Type here" autofocus>
-    <button type="button" name="Submit" onClick="document.location.href='Report.php';"class="Submit">Submit
 
-    </button>
-</form>
-</body>
+                <label><b>OrderID</b></label>
+                <!-- <span class="error"><?php echo $Username_Error ;?></span> -->
+                <input type="text" placeholder="Enter Order ID" name="OrderID" value="" autofocus>
+
+                <label><b>Product ID</b></label>
+                <!-- <span class="error"><?php echo $Password_Error ;?></span> -->
+                <input type="text" placeholder="ProductID" name="ProductID" value="">
+
+                <label for="Fname"><b>Description</b></label>
+                <!-- <span class="error"><?php echo $Password_Error ;?></span> -->
+                <input type="text" name="Description" placeholder="Enter a brif description of the problem you are having" value="">
+
+                <div class="clearfix">
+                    <button type="submit" name="submit" class="signupbtn">Submit </button>
+                    <button type="button" name="Cancel" onClick="document.location.href='index.php';" class="cancelbtn">Cancel</button>
+                </div>
+            </div>
+
+        </form>
+    </body>
 </html>

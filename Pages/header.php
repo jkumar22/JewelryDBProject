@@ -10,14 +10,16 @@
     <body>
     <ul>
         <li class="<?php if($currentPage =='home'){echo 'active';}?>"> <a href="index.php">Home</a> </li>
+        <li class="<?php if($currentPage =='homeOld'){echo 'active';}?>"> <a href="homeOld.php">HomeOld</a> </li>
         <?php
         if(isset($_SESSION['loggedIn']))
         {
             if($_SESSION['adminFlag'] == 1 )
             { 
         ?>
-                    <li class="<?php if($currentPage =='Report'){echo 'active';}?>"> <a href="Report.php">Report</a></li>
+                <li class="<?php if($currentPage =='Report'){echo 'active';}?>"> <a href="Report.php">Report</a></li>
                 <li class="<?php if($currentPage =='Registered User'){echo 'active';}?>"> <a href="RegisteredUserReport.php">Registered User</a></li>
+                <li class="<?php if($currentPage =='Complaint'){echo 'active';}?>"> <a href="Complaint.php">Complaint</a></li>
         <?php 
             } 
         } 

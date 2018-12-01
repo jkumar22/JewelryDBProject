@@ -1,8 +1,8 @@
 <?php
 include('../DBConnection/DBconnection.php');
 
-$sql = $dbCon ->query("SELECT * FROM USER ORDER BY UserID DESC");
-$loginSQL = $dbCon ->query("SELECT * FROM LOGIN ORDER BY UserID DESC");
+$sql = $dbCon ->query("SELECT * FROM USER");
+$loginSQL = $dbCon ->query("SELECT * FROM LOGIN");
 
 ?>
 <!DOCTYPE html>
@@ -27,6 +27,8 @@ $loginSQL = $dbCon ->query("SELECT * FROM LOGIN ORDER BY UserID DESC");
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
+                    <th>Credit Card</th>
+                    <th>Phone</th>
                     <th>Address1</th>
                     <th>Address2</th>
                     <th>City </th>
@@ -34,6 +36,7 @@ $loginSQL = $dbCon ->query("SELECT * FROM LOGIN ORDER BY UserID DESC");
                     <th>Zip</th>
                     <th>Country</th>
                     <th>Date</th>
+                    <th>Email Me?</th>
                 </tr>
 
                 <!-- looping each agency in each row -->
@@ -50,6 +53,8 @@ $loginSQL = $dbCon ->query("SELECT * FROM LOGIN ORDER BY UserID DESC");
                     $Fname = $rows['fname'];
                     $Lame = $rows['lname'];
                     $Email = $rows['email'];
+                    $CreditCard = $rows['creditCard'];
+                    $Phone = $rows['phone'];
                     $Address1 = $rows['address1'];
                     $Address2 = $rows['address2'];
                     $City = $rows['city'];
@@ -57,11 +62,14 @@ $loginSQL = $dbCon ->query("SELECT * FROM LOGIN ORDER BY UserID DESC");
                     $Zip = $rows['zip'];
                     $Country = $rows['country'];
                     $Date = $rows['date'];
+                    $markingEmailFlag = $rows['markingEmailFlag'];
                     ?>
                     <td><?php echo $ID?></td>
                     <td><?php echo $Fname?></td>
                     <td><?php echo $Lame?></td>
                     <td><?php echo $Email?></td>
+                    <td><?php echo $CreditCard?></td>
+                    <td><?php echo $Phone?></td>
                     <td><?php echo $Address1?></td>
                     <td><?php echo $Address2?></td>
                     <td><?php echo $City?></td>
@@ -69,6 +77,7 @@ $loginSQL = $dbCon ->query("SELECT * FROM LOGIN ORDER BY UserID DESC");
                     <td><?php echo $Zip?></td>
                     <td><?php echo $Country?></td>
                     <td><?php echo ($Date)?></td>
+                    <td><?php echo ($markingEmailFlag)?></td>
                     <?php
                     }
                     }
