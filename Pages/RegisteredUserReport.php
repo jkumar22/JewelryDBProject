@@ -3,6 +3,8 @@ include('../DBConnection/DBconnection.php');
 
 $sql = $dbCon ->query("SELECT * FROM USER");
 $loginSQL = $dbCon ->query("SELECT * FROM LOGIN");
+$ProductSQL = $dbCon ->query("SELECT * FROM PRODUCT");
+
 
 ?>
 <!DOCTYPE html>
@@ -88,6 +90,7 @@ $loginSQL = $dbCon ->query("SELECT * FROM LOGIN");
                     ?>
             </table>
         </br>
+        <hr>
         <h2>Login Table</h2>
         <p>List of user name and password</p>
 
@@ -119,6 +122,54 @@ $loginSQL = $dbCon ->query("SELECT * FROM LOGIN");
                     <td><?php echo $Email?></td>
                     <td><?php echo $Password?></td>
                     <td><?php echo $adminFlag?></td>
+                    <?php
+                    }
+                    }
+                    else
+                    {
+                        echo "No data available at this time";
+                    }
+                    ?>
+                </table>
+        <hr>
+        <h2>Product Table</h2>
+        <p>List of products with appropriate info</p>
+
+
+            <table id = "user_table" >
+                <tr >
+                    <th>ID</th>
+                    <th>Price</th>
+                    <th>Inventory</th>
+                    <th>InventoryDate</th>
+                    <th>stock</th>
+                    <th>image</th>
+                </tr>
+
+                <!-- looping each agency in each row -->
+                <?php
+                if($ProductSQL ->num_rows != 0)
+                {
+                while ($rows = $ProductSQL->fetch_assoc())
+                {
+                ?>
+                <tr id="rows<?php echo $rows['productID'];?>">
+
+                    <?php
+                    $ID = $rows['productID'];
+                    $Price = $rows['price'];
+                    $Inventory = $rows['inventory'];
+                    $InventoryDate = $rows['inventoryDate'];
+                    $stock = $rows['stock'];
+                    $image = $rows['image'];
+                    ?>
+
+                    <td><?php echo $ID?></td>
+                    <td><?php echo $Price?></td>
+                    <td><?php echo $InventoryDate?></td>
+                    <td><?php echo $Inventory?></td>
+                    <td><?php echo $stock?></td>
+                    <td><?php echo $image?></td>
                     <?php
                     }
                     }

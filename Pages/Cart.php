@@ -49,6 +49,8 @@ if (isset($_POST['Remove']))
 else if (isset($_POST['CheckOut']))
 {
     $sql = $dbCon ->query("UPDATE CART  SET isPurchasedFlag = 1 WHERE isPurchasedFlag = 0 AND userID = '$userID'");
+    
+    header('Location: PurchaseConfirmation.php');
 } 
 
 
