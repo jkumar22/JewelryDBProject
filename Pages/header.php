@@ -35,7 +35,7 @@
                 {
                     ?>
                     <li style="float:right"><a href="../Process/LogOut_Process.php">Logout</a></li>
-                    <li style="float:right"><a><?php echo $_SESSION['fname'] ?> </a></li>
+                    <li style="float:right"><a href="PurchaseHistory.php"><?php echo $_SESSION['fname'] ?> </a></li>
 
                     <?php 
                 }

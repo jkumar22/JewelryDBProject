@@ -2,7 +2,7 @@
 
 include('../DBConnection/DBconnection.php');
 
-$productID = $userID = $dateOfPurchase = ""; 
+$TotalPrice = $productID = $userID = $dateOfPurchase = ""; 
 echo $productID . " " . $userID . " " . $dateOfPurchase;
 $userID = $_SESSION['userID']; //User ID
 
@@ -25,6 +25,9 @@ if((isset($_SESSION['loggedIn'])) && ($_SESSION['loggedIn'] == "True" ))
         else{
             echo  "Error: " . $sql_addTwo . "<br>" . mysqli_error($dbCon);
         }
+
+        $sql = $dbCon ->query("UPDATE PRODUCT  SET stock = stock - 1 WHERE productID = '$productID'");
+
     }
 
 }else
@@ -35,12 +38,18 @@ if((isset($_SESSION['loggedIn'])) && ($_SESSION['loggedIn'] == "True" ))
 
 
 if (isset($_POST['Remove']))
-    {
-        $P_Id = strip_tags($_POST['Remove']);
+{
+    $P_Id = strip_tags($_POST['Remove']);
 
-        $sql = $dbCon ->query("DELETE FROM CART WHERE productID = '$P_Id'");
-        // printing the changed recor
-    }
+    $sql = $dbCon ->query("DELETE FROM CART WHERE productID = '$P_Id'");
+    $sql = $dbCon ->query("UPDATE PRODUCT  SET stock = stock + 1 WHERE productID = '$P_Id'");
+
+    // printing the changed recor
+}
+else if (isset($_POST['CheckOut']))
+{
+    $sql = $dbCon ->query("UPDATE CART  SET isPurchasedFlag = 1 WHERE isPurchasedFlag = 0 AND userID = '$userID'");
+} 
 
 
 ?>
@@ -80,6 +89,7 @@ if (isset($_POST['Remove']))
                         $Image = "..\Images\\" . $rows['image'];
                         $productID = $rows['productID'];
                         $price = $rows['price'];
+                        $TotalPrice = ((int)$TotalPrice) + ((int)$price); 
                         $inventory = $rows['inventory'];
                         $inventoryDate = $rows['inventoryDate'];
                         $stock = $rows['stock'];
@@ -91,6 +101,9 @@ if (isset($_POST['Remove']))
                 </div>
             <?php }}?>
         </div>
+        <hr>
+        <h3>Your Total is:<b> <?= $TotalPrice ?>$ </b></h3>
+        <button type="submit" name="CheckOut" value="<?= $productID ?>" >Check Out</button>
 
     </div>
 </form>
