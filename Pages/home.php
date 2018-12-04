@@ -58,7 +58,6 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
 
                 if($quarrySQL ->num_rows != 0)
                 {
-                    
                     while ($rows = $quarrySQL->fetch_assoc())
                     {
                          
