@@ -4,6 +4,8 @@ include('../DBConnection/DBconnection.php');
 $sql = $dbCon ->query("SELECT * FROM USER");
 $loginSQL = $dbCon ->query("SELECT * FROM LOGIN");
 $ProductSQL = $dbCon ->query("SELECT * FROM PRODUCT");
+$CartSQL = $dbCon ->query("SELECT * FROM CART");
+
 
 
 ?>
@@ -179,6 +181,64 @@ $ProductSQL = $dbCon ->query("SELECT * FROM PRODUCT");
                     }
                     ?>
             </table>
+
+        <hr>
+        <h2>Cart Table</h2>
+        <p>List of products with appropriate info</p>
+
+
+            <table id = "user_table" >
+                <tr >
+                    <th>Purchase ID</th>
+                    <th>UserID</th>
+                    <th>ProductID</th>
+                    <th>Rating</th>
+                    <th>Date</th>
+                    <th>Is it Purchased</th>
+                    <th>Option</th>
+                    <th>Added Price</th>
+                </tr>
+
+                <!-- looping each agency in each row -->
+                <?php
+                if($CartSQL ->num_rows != 0)
+                {
+                while ($rows = $CartSQL->fetch_assoc())
+                {
+                ?>
+                <tr id="rows<?php echo $rows['purchaseID'];?>">
+
+                    <?php
+                    $purchaseID = $rows['purchaseID'];
+                    $userID = $rows['userID'];
+                    $productID = $rows['productID'];
+                    $ratings = $rows['ratings'];
+                    $dateOfPurchase = $rows['dateOfPurchase'];
+                    $isPurchasedFlag = $rows['isPurchasedFlag'];
+                    $Option = $rows['option'];
+                    $addprice = $rows['addprice'];
+
+                    ?>
+
+                    <td><?php echo $purchaseID?></td>
+                    <td><?php echo $userID?></td>
+                    <td><?php echo $productID?></td>
+                    <td><?php echo $ratings?></td>
+                    <td><?php echo $dateOfPurchase?></td>
+                    <td><?php echo $isPurchasedFlag?></td>
+                    <td><?php echo $Option?></td>
+                    <td><?php echo $addprice?></td>
+
+                    <?php
+                    }
+                    }
+                    else
+                    {
+                        echo "No data available at this time";
+                    }
+                    ?>
+            </table>
+
         </form>
 
     </Div>

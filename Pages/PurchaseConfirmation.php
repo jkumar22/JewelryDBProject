@@ -36,7 +36,7 @@ $sql = $dbCon ->query("SELECT * FROM USER WHERE userID = '$userID'");
 <?php $currentPage ='confirmationPage'; include 'header.php'; ?>
 <form class="modal-content" style="width:50%">
     <div class="container">
-        <h2>Thank you <?= $Fname ?>,for Purchasing Awesome Jewelary!</h2>
+        <h2>Thank you <?= $Fname ?>,for Purchasing Awesome Jewellery!</h2>
         <p>Your Jewelary is on your way.</p>
         <p><b>Shipped to:</b></p>
         <p><?= $Fname ?> <?= $Lname ?></p>

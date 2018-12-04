@@ -13,11 +13,11 @@ $userID = $_SESSION['userID']; //User ID
 </head>
 
 <body>
-<?php $currentPage ='cart'; include 'header.php'; ?>
+<?php $currentPage ='user'; include 'header.php'; ?>
 <form class="modal-content" method="post" style="width:50%" action= "<?= $_SERVER['PHP_SELF']; ?>" autocomplete="on">
     <div class="container">
-        <h2>Your Awesome Jewelry Cart!</h2>
-        <p>Fill up your cart.</p>
+        <h2>Your Awesome Jewelry Purchase History!</h2>
+        <p>Isn't clicking check out Fun?!</p>
         <hr>
         <div style="width:100%; display: flex;">
             <?php
