@@ -9,7 +9,7 @@
 
 <body>
 <?php $currentPage = 'Register'; include 'header.php'; ?>
-<form class="modal-content" method="post" style="width:50%" action= "<?= $_SERVER['PHP_SELF']; ?>" autocomplete="on">
+<form class="modal-content" method="post" style="width:50%" action= "<?= $_SERVER['PHP_SELF']; ?>">
     <div class="container">
         <h2>Welcome to Awesome Jewelry!</h2>
         <p>Register to buy the best Jewelry in the world. It has magic powers.</p>
