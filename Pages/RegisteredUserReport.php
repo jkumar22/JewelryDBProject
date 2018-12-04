@@ -1,8 +1,12 @@
 <?php
 include('../DBConnection/DBconnection.php');
 
-$sql = $dbCon ->query("SELECT * FROM USER ORDER BY UserID DESC");
-$loginSQL = $dbCon ->query("SELECT * FROM LOGIN ORDER BY UserID DESC");
+$sql = $dbCon ->query("SELECT * FROM USER");
+$loginSQL = $dbCon ->query("SELECT * FROM LOGIN");
+$ProductSQL = $dbCon ->query("SELECT * FROM PRODUCT");
+$CartSQL = $dbCon ->query("SELECT * FROM CART");
+
+
 
 ?>
 <!DOCTYPE html>
@@ -27,6 +31,8 @@ $loginSQL = $dbCon ->query("SELECT * FROM LOGIN ORDER BY UserID DESC");
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
+                    <th>Credit Card</th>
+                    <th>Phone</th>
                     <th>Address1</th>
                     <th>Address2</th>
                     <th>City </th>
@@ -34,6 +40,7 @@ $loginSQL = $dbCon ->query("SELECT * FROM LOGIN ORDER BY UserID DESC");
                     <th>Zip</th>
                     <th>Country</th>
                     <th>Date</th>
+                    <th>Email Me?</th>
                 </tr>
 
                 <!-- looping each agency in each row -->
@@ -50,6 +57,8 @@ $loginSQL = $dbCon ->query("SELECT * FROM LOGIN ORDER BY UserID DESC");
                     $Fname = $rows['fname'];
                     $Lame = $rows['lname'];
                     $Email = $rows['email'];
+                    $CreditCard = $rows['creditCard'];
+                    $Phone = $rows['phone'];
                     $Address1 = $rows['address1'];
                     $Address2 = $rows['address2'];
                     $City = $rows['city'];
@@ -57,11 +66,14 @@ $loginSQL = $dbCon ->query("SELECT * FROM LOGIN ORDER BY UserID DESC");
                     $Zip = $rows['zip'];
                     $Country = $rows['country'];
                     $Date = $rows['date'];
+                    $markingEmailFlag = $rows['markingEmailFlag'];
                     ?>
                     <td><?php echo $ID?></td>
                     <td><?php echo $Fname?></td>
                     <td><?php echo $Lame?></td>
                     <td><?php echo $Email?></td>
+                    <td><?php echo $CreditCard?></td>
+                    <td><?php echo $Phone?></td>
                     <td><?php echo $Address1?></td>
                     <td><?php echo $Address2?></td>
                     <td><?php echo $City?></td>
@@ -69,6 +81,7 @@ $loginSQL = $dbCon ->query("SELECT * FROM LOGIN ORDER BY UserID DESC");
                     <td><?php echo $Zip?></td>
                     <td><?php echo $Country?></td>
                     <td><?php echo ($Date)?></td>
+                    <td><?php echo ($markingEmailFlag)?></td>
                     <?php
                     }
                     }
@@ -79,6 +92,7 @@ $loginSQL = $dbCon ->query("SELECT * FROM LOGIN ORDER BY UserID DESC");
                     ?>
             </table>
         </br>
+        <hr>
         <h2>Login Table</h2>
         <p>List of user name and password</p>
 
@@ -118,7 +132,113 @@ $loginSQL = $dbCon ->query("SELECT * FROM LOGIN ORDER BY UserID DESC");
                         echo "No data available at this time";
                     }
                     ?>
+                </table>
+        <hr>
+        <h2>Product Table</h2>
+        <p>List of products with appropriate info</p>
+
+
+            <table id = "user_table" >
+                <tr >
+                    <th>ID</th>
+                    <th>Price</th>
+                    <th>Inventory</th>
+                    <th>InventoryDate</th>
+                    <th>stock</th>
+                    <th>image</th>
+                </tr>
+
+                <!-- looping each agency in each row -->
+                <?php
+                if($ProductSQL ->num_rows != 0)
+                {
+                while ($rows = $ProductSQL->fetch_assoc())
+                {
+                ?>
+                <tr id="rows<?php echo $rows['productID'];?>">
+
+                    <?php
+                    $ID = $rows['productID'];
+                    $Price = $rows['price'];
+                    $Inventory = $rows['inventory'];
+                    $InventoryDate = $rows['inventoryDate'];
+                    $stock = $rows['stock'];
+                    $image = $rows['image'];
+                    ?>
+
+                    <td><?php echo $ID?></td>
+                    <td><?php echo $Price?></td>
+                    <td><?php echo $InventoryDate?></td>
+                    <td><?php echo $Inventory?></td>
+                    <td><?php echo $stock?></td>
+                    <td><?php echo $image?></td>
+                    <?php
+                    }
+                    }
+                    else
+                    {
+                        echo "No data available at this time";
+                    }
+                    ?>
             </table>
+
+        <hr>
+        <h2>Cart Table</h2>
+        <p>List of products with appropriate info</p>
+
+
+            <table id = "user_table" >
+                <tr >
+                    <th>Purchase ID</th>
+                    <th>UserID</th>
+                    <th>ProductID</th>
+                    <th>Rating</th>
+                    <th>Date</th>
+                    <th>Is it Purchased</th>
+                    <th>Option</th>
+                    <th>Added Price</th>
+                </tr>
+
+                <!-- looping each agency in each row -->
+                <?php
+                if($CartSQL ->num_rows != 0)
+                {
+                while ($rows = $CartSQL->fetch_assoc())
+                {
+                ?>
+                <tr id="rows<?php echo $rows['purchaseID'];?>">
+
+                    <?php
+                    $purchaseID = $rows['purchaseID'];
+                    $userID = $rows['userID'];
+                    $productID = $rows['productID'];
+                    $ratings = $rows['ratings'];
+                    $dateOfPurchase = $rows['dateOfPurchase'];
+                    $isPurchasedFlag = $rows['isPurchasedFlag'];
+                    $Option = $rows['option'];
+                    $addprice = $rows['addprice'];
+
+                    ?>
+
+                    <td><?php echo $purchaseID?></td>
+                    <td><?php echo $userID?></td>
+                    <td><?php echo $productID?></td>
+                    <td><?php echo $ratings?></td>
+                    <td><?php echo $dateOfPurchase?></td>
+                    <td><?php echo $isPurchasedFlag?></td>
+                    <td><?php echo $Option?></td>
+                    <td><?php echo $addprice?></td>
+
+                    <?php
+                    }
+                    }
+                    else
+                    {
+                        echo "No data available at this time";
+                    }
+                    ?>
+            </table>
+
         </form>
 
     </Div>
