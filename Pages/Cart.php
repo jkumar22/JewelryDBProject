@@ -2,6 +2,7 @@
 
 include('../DBConnection/DBconnection.php');
 
+
 $TotalPrice = $productID = $userID = $dateOfPurchase = ""; 
 echo $productID . " " . $userID . " " . $dateOfPurchase;
 $userID = $_SESSION['userID']; //User ID
@@ -64,6 +65,7 @@ else if (isset($_POST['CheckOut']))
 
 <body>
 <?php $currentPage ='cart'; include 'header.php'; ?>
+<body background="../Images/bg4.jpg">
 <form class="modal-content" method="post" style="width:50%" action="Cart.php" autocomplete="on">
     <div class="container">
         <h2>Your Awesome Jewelry Cart!</h2>

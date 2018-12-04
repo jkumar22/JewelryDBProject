@@ -13,7 +13,9 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
 </head>
 
 <body>
+
 <?php $currentPage ='home'; include 'header.php'; ?>
+<body background="../Images/bg4.jpg">
 
 <form class="modal-content" method="post" style="width:50%" action= "<?= $_SERVER['PHP_SELF']; ?>" autocomplete="on">
     <div class="container">
@@ -99,7 +101,7 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
                 <div align="center" class="column"; style="width:20%; margin-right:50px; margin-left:50px" >
                     <img src="<?= $Image ?>"  width="100" height="100" align="middle" >
                     <p><b>Price:$ <?=$price?> </b></p>
-                    <a href="Customizebracelet.php?secureVar=<?= $productID ?>"><input type="button" class="customizebt" value="Customize"></a>
+                    <a href="Customizebt.php?secureVar=<?= $productID ?>"><input type="button" class="customizebt" value="Customize"></a>
                 </div>
             <?php }}?>
         </div>
@@ -126,7 +128,7 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
                 <div align="center" class="column"; style="width:20%; margin-right:50px; margin-left:50px" >
                     <img src="<?= $Image ?>"  width="100" height="100" align="middle" >
                     <p><b>Price:$ <?=$price?> </b></p>
-                    <a href="Customizebracelet.php?secureVar=<?= $productID ?>"><input type="button" class="customizebt" value="Customize"></a>
+                    <a href="Customizebt.php?secureVar=<?= $productID ?>"><input type="button" class="customizebt" value="Customize"></a>
                 </div>
             <?php }}?>
         </div>
@@ -158,7 +160,7 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
             <?php }}?>
         </div>
 
-        <h3><U>Grand Mother's BRACELETS</U></h3>
+        <h3><U>GRAND MOTHER'S BRACELETS</U></h3>
         <div style="width:100%; display: flex;">
             <?php
                 $sqlString = "SELECT * FROM GMBRACELETS LEFT JOIN PRODUCT ON GMBRACELETS.productID = PRODUCT.productID;";
@@ -180,7 +182,7 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
                 <div align="center" class="column"; style="width:20%; margin-right:50px; margin-left:50px" >
                     <img src="<?= $Image ?>"  width="100" height="100" align="middle" >
                     <p><b>Price:$ <?=$price?> </b></p>
-                    <a href="Customizebracelet.php?secureVar=<?= $productID ?>"><input type="button" class="customizebt" value="Customize"></a>
+                    <a href="Customizebt.php?secureVar=<?= $productID ?>"><input type="button" class="customizebt" value="Customize"></a>
                 </div>
             <?php }}?>
         </div>
@@ -207,7 +209,7 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
                 <div align="center" class="column"; style="width:20%; margin-right:50px; margin-left:50px" >
                     <img src="<?= $Image ?>"  width="100" height="100" align="middle" >
                     <p><b>Price:$ <?=$price?> </b></p>
-                    <a href="Customizebracelet.php?secureVar=<?= $productID ?>"><input type="button" class="customizebt" value="Customize"></a>
+                    <a href="Customizebt.php?secureVar=<?= $productID ?>"><input type="button" class="customizebt" value="Customize"></a>
                 </div>
             <?php }}?>
         </div>

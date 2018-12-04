@@ -8,6 +8,7 @@
 
 <body>
 <?php $currentPage ='homeOld'; include 'header.php'; ?>
+<body background="../Images/bg2.jpg">
 <form class="modal-content" method="post" style="width:50%" action= "<?= $_SERVER['PHP_SELF']; ?>" autocomplete="on">
     <div class="container">
         <h2>Welcome to Awesome Jewelry Home!</h2>
