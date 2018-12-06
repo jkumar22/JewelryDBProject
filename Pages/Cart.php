@@ -94,7 +94,7 @@ else if (isset($_POST['CheckOut']))
                         $productID = $rows['productID'];
                         $price = $rows['price'];
                         $addprice = $rows['addprice'];
-                        $Option = $rows['option'];
+                        $Option = $rows['options'];
                         $TotalPrice = ((int)$TotalPrice) + ((int)$price) + ((int)$addprice); 
                         $inventory = $rows['inventory'];
                         $inventoryDate = $rows['inventoryDate'];

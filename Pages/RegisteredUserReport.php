@@ -196,6 +196,7 @@ $CartSQL = $dbCon ->query("SELECT * FROM CART");
                     <th>Date</th>
                     <th>Is it Purchased</th>
                     <th>Option</th>
+                    <th>Price</th>
                     <th>Added Price</th>
                 </tr>
 
@@ -215,7 +216,8 @@ $CartSQL = $dbCon ->query("SELECT * FROM CART");
                     $ratings = $rows['ratings'];
                     $dateOfPurchase = $rows['dateOfPurchase'];
                     $isPurchasedFlag = $rows['isPurchasedFlag'];
-                    $Option = $rows['option'];
+                    $Option = $rows['options'];
+                    $price = $rows['price'];
                     $addprice = $rows['addprice'];
 
                     ?>
@@ -227,6 +229,7 @@ $CartSQL = $dbCon ->query("SELECT * FROM CART");
                     <td><?php echo $dateOfPurchase?></td>
                     <td><?php echo $isPurchasedFlag?></td>
                     <td><?php echo $Option?></td>
+                    <td><?php echo $price?></td>
                     <td><?php echo $addprice?></td>
 
                     <?php

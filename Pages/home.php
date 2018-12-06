@@ -24,6 +24,7 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
 
         <h3><U>EARRINGS</U></h3>
         <div style="width:100%; display: flex;">
+
             <?php
                 $sqlString = "SELECT * FROM EARRINGS LEFT JOIN PRODUCT ON EARRINGS.productID = PRODUCT.productID;";
                 $quarrySQL = $dbCon ->query($sqlString);
@@ -33,7 +34,6 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
                     
                     while ($rows = $quarrySQL->fetch_assoc())
                     {
-                         
                         $Image = "..\Images\\" . $rows['image'];
                         $productID = $rows['productID'];
                         $price = $rows['price'];
@@ -48,7 +48,6 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
                 </div>
             <?php }}?>
         </div>
-
 
         <h3><U>NECKLACES</U></h3>
         <div style="width:100%; display: flex;">

@@ -18,16 +18,16 @@
             krisah@umich.edu
         </p>
         <p>
+            <B>Vishvadha Kari</B> </br>
+            vkari@umich.edu
+        </p>
+        <p>
             <B>Jay Patel</B> </br>
             jnpatel@umich.edu
         </p>
         <p>
             <B>Deekshita Seenivasan</B> </br>
             sdeekshi@umich.edu
-        </p>
-        <p>
-            <B>Kari Vishvadha</B> </br>
-            vkari@umich.edu
         </p>
         <p>
             <B>Sriyashaswini Vore</B></br>
