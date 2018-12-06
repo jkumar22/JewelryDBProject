@@ -7,6 +7,6 @@ $Username_Error = $Password_Error = $Login_Error= "";
 $dbUsername = $dbUsername = $dbPassword = $dbadminFlag = ""; 
 $IsError = "false";
 
-}
+
 
 ?>
