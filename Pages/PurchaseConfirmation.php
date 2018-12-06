@@ -50,7 +50,7 @@ $sql = $dbCon ->query("SELECT * FROM USER WHERE userID = '$userID'");
             <Button type="button" class="signupbtn" onClick="document.location.href='index.php';"/>Return Home!</Button>
         </div>
     </div>
-    <div class="container">
+    <br style="width:100%; display: flex;">
         <div class="rate">
         <p> Please rate us!</p>
         <input type="radio" id="star5" name="rate" value="5" />
@@ -105,6 +105,8 @@ $sql = $dbCon ->query("SELECT * FROM USER WHERE userID = '$userID'");
             }
         </style>
     </div>
+        </br></br></br></br>
+
     </div>
 </form>
 </body>
