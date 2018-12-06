@@ -25,9 +25,8 @@ if (isset($_POST['addToCart']))
         $Option = "Size:" . $size . " Option1:" . $color . " Option2:" . $BabyName;
         date_default_timezone_set("America/New_York");
         $dateOfPurchase = date("Y-m-d h:i:sa");
-        echo $Option;
 
-        $sql_addTwo = "INSERT INTO CART (userID, productID, dateOfPurchase, options, addprice)
+        $sql_addTwo = "INSERT INTO CART (userID, productID, dateOfPurchase, option, addprice)
         VALUES ('$userID','$productID','$dateOfPurchase', '$Option', $addprice)";
     
         if (mysqli_query($dbCon, $sql_addTwo))
