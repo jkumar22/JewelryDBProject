@@ -24,7 +24,7 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
             <h3><U>EARRINGS</U></h3>
             <div style="width:100%; display: flex;">
                 <?php
-                $sqlString = "SELECT * FROM EARRINGS LEFT JOIN PRODUCT ON EARRINGS.productID = PRODUCT.productID;";
+                $sqlString = "SELECT * FROM EARRINGS LEFT JOIN PRODUCT ON EARRINGS.productID = PRODUCT.productID and PRODUCT.stock >0;";
                 $quarrySQL = $dbCon ->query($sqlString);
 
                 if($quarrySQL ->num_rows != 0)
@@ -52,7 +52,7 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
             <h3><U>NECKLACES</U></h3>
             <div style="width:100%; display: flex;">
                 <?php
-                $sqlString = "SELECT * FROM NECKLACES LEFT JOIN PRODUCT ON NECKLACES.productID = PRODUCT.productID;";
+                $sqlString = "SELECT * FROM NECKLACES LEFT JOIN PRODUCT ON NECKLACES.productID = PRODUCT.productID and PRODUCT.stock >0;";
                 $quarrySQL = $dbCon ->query($sqlString);
 
                 if($quarrySQL ->num_rows != 0)
@@ -79,7 +79,7 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
             <h3><U>BABY BRACELETS</U></h3>
             <div style="width:100%; display: flex;">
                 <?php
-                $sqlString = "SELECT * FROM BABYBRACELETS LEFT JOIN PRODUCT ON BABYBRACELETS.productID = PRODUCT.productID;";
+                $sqlString = "SELECT * FROM BABYBRACELETS LEFT JOIN PRODUCT ON BABYBRACELETS.productID = PRODUCT.productID and PRODUCT.stock >0;";
                 $quarrySQL = $dbCon ->query($sqlString);
 
                 if($quarrySQL ->num_rows != 0)
@@ -106,7 +106,7 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
             <h3><U>MOTHER'S BRACELETS</U></h3>
             <div style="width:100%; display: flex;">
                 <?php
-                $sqlString = "SELECT * FROM MOTHERBRACELETS LEFT JOIN PRODUCT ON MOTHERBRACELETS.productID = PRODUCT.productID;";
+                $sqlString = "SELECT * FROM MOTHERBRACELETS LEFT JOIN PRODUCT ON MOTHERBRACELETS.productID = PRODUCT.productID and PRODUCT.stock >0;";
                 $quarrySQL = $dbCon ->query($sqlString);
 
                 if($quarrySQL ->num_rows != 0)
@@ -133,7 +133,7 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
             <h3><U>SETS</U></h3>
             <div style="width:100%; display: flex;">
                 <?php
-                $sqlString = "SELECT * FROM SETS LEFT JOIN PRODUCT ON SETS.productID = PRODUCT.productID;";
+                $sqlString = "SELECT * FROM SETS LEFT JOIN PRODUCT ON SETS.productID = PRODUCT.productID and PRODUCT.stock >0;";
                 $quarrySQL = $dbCon ->query($sqlString);
 
                 if($quarrySQL ->num_rows != 0)
@@ -160,7 +160,7 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
             <h3><U>Grand Mother's BRACELETS</U></h3>
             <div style="width:100%; display: flex;">
                 <?php
-                $sqlString = "SELECT * FROM GMBRACELETS LEFT JOIN PRODUCT ON GMBRACELETS.productID = PRODUCT.productID;";
+                $sqlString = "SELECT * FROM GMBRACELETS LEFT JOIN PRODUCT ON GMBRACELETS.productID = PRODUCT.productID and PRODUCT.stock >0;";
                 $quarrySQL = $dbCon ->query($sqlString);
 
                 if($quarrySQL ->num_rows != 0)
@@ -187,7 +187,7 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
             <h3><U>WEDDING BRACELETS</U></h3>
             <div style="width:100%; display: flex;">
                 <?php
-                $sqlString = "SELECT * FROM WEDDINGBRACELETS LEFT JOIN PRODUCT ON WEDDINGBRACELETS.productID = PRODUCT.productID;";
+                $sqlString = "SELECT * FROM WEDDINGBRACELETS LEFT JOIN PRODUCT ON WEDDINGBRACELETS.productID = PRODUCT.productID and PRODUCT.stock >0;";
                 $quarrySQL = $dbCon ->query($sqlString);
 
                 if($quarrySQL ->num_rows != 0)
@@ -214,7 +214,7 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
             <h3><U>EVERYDAYSETS</U></h3>
             <div style="width:100%; display: flex;">
                 <?php
-                $sqlString = "SELECT * FROM EVERYDAYJEWELRY LEFT JOIN PRODUCT ON EVERYDAYJEWELRY.productID = PRODUCT.productID;";
+                $sqlString = "SELECT * FROM EVERYDAYJEWELRY LEFT JOIN PRODUCT ON EVERYDAYJEWELRY.productID = PRODUCT.productID and PRODUCT.stock >0;";
                 $quarrySQL = $dbCon ->query($sqlString);
 
                 if($quarrySQL ->num_rows != 0)
@@ -222,7 +222,6 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
                     $x = 3;
                     while ($rows = $quarrySQL->fetch_assoc())
                     {
-
                         $Image = "..\Images\\" . $rows['image'];
                         $productID = $rows['productID'];
                         $price = $rows['price'];

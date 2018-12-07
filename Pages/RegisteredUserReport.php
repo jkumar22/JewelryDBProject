@@ -32,7 +32,6 @@ $CartSQL = $dbCon ->query("SELECT * FROM CART");
                     <th>Last Name</th>
                     <th>Email</th>
                     <th>Credit Card</th>
-                    <th>Phone</th>
                     <th>Address1</th>
                     <th>Address2</th>
                     <th>City </th>
@@ -58,7 +57,6 @@ $CartSQL = $dbCon ->query("SELECT * FROM CART");
                     $Lame = $rows['lname'];
                     $Email = $rows['email'];
                     $CreditCard = $rows['creditCard'];
-                    $Phone = $rows['phone'];
                     $Address1 = $rows['address1'];
                     $Address2 = $rows['address2'];
                     $City = $rows['city'];
@@ -73,7 +71,6 @@ $CartSQL = $dbCon ->query("SELECT * FROM CART");
                     <td><?php echo $Lame?></td>
                     <td><?php echo $Email?></td>
                     <td><?php echo $CreditCard?></td>
-                    <td><?php echo $Phone?></td>
                     <td><?php echo $Address1?></td>
                     <td><?php echo $Address2?></td>
                     <td><?php echo $City?></td>

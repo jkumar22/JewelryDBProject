@@ -49,7 +49,7 @@ $userID = $_SESSION['userID']; //User ID
             <div align="center" class="column"; style="width:20%; margin-right:50px; margin-left:50px" >
                 <img src="<?= $Image ?>"  width="100" height="100" align="middle" >
                 <?php if($Option != ""){ ?>
-                <p><b>Options:</b><?=$Option?></p>
+                    <p><b>Options:</b><?=$Option?></p>
                 <?php } ?>
                 <p><b>Price:$ <?=$price?> </b></p>
                 <p>Purchased on: <?=$dateOfPurchase?></p>
@@ -63,7 +63,6 @@ $userID = $_SESSION['userID']; //User ID
         </div>
         <hr>
         <h3>Thank You For Being Our Royal Customer</h3>
-
     </div>
 </form>
 </body>
