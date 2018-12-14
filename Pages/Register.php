@@ -38,12 +38,12 @@
         <input type="text" name="CreditCard" placeholder="4115105553560544" value="<?= $CreditCard ?>">
 
         <div style="width:100%;">
-            <div style="width:20%; float:left; margin-right:50px"> 
+            <div style="width:20%; float:left; margin-right:50px">
                 <label for="cvv"><b>CVV</b></label>
                 <span class="error"><?php echo $cvv_Error ;?></span>
                 <input type="text" placeholder="434" name="cvv" value="<?= $cvv ?>">
             </div>
-            <div style="width:30%; float:left; margin-right:10px"> 
+            <div style="width:30%; float:left; margin-right:10px">
                 <label for="cvv"><b>Experation date</b></label>
                 <span class="error"><?php echo $ExperationDate_Error ;?></span>
                 <input type="text" placeholder="11/2019" name="ExperationDate" value="<?= $ExperationDate ?>">
@@ -54,7 +54,7 @@
         <label for="address"><b>Shipping Address</b></label>
         <span class="error"><?php echo $Address_Error;?></span>
         <input type="text" placeholder="Enter Address" name="address" value="<?= $Address ?>">
-        
+
         <label for="address2"><b>Address2</b></label>
         <span class="error"><?php echo $Address2_Error;?></span>
         <input type="text" placeholder="apt. 123" name="address2" value="<?= $Address2 ?>">
@@ -129,7 +129,9 @@
         <select name="country" id="country">
             <option value="USA">United States of America</option>
         </select>
-
+        <div id="section2">
+            <label>Receive our newsletter<input type="checkbox" name="newsletter" value="Yes" checked="checked"><span class="checkmark"></span></label>
+        </div>
         <div class="clearfix">
             <button type="submit" name="submit" class="signupbtn">Sign Up</button>
             <button type="button" name="Cancel" onClick="document.location.href='index.php';" class="cancelbtn">Cancel</button>

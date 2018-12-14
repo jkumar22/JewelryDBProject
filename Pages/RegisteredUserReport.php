@@ -27,12 +27,11 @@ $CartSQL = $dbCon ->query("SELECT * FROM CART");
 
             <table id = "user_table" >
                 <tr >
-                    <th>ID</th>                    
+                    <th>ID</th>
                     <th>First Name</th>
                     <th>Last Name</th>
                     <th>Email</th>
                     <th>Credit Card</th>
-                    <th>Phone</th>
                     <th>Address1</th>
                     <th>Address2</th>
                     <th>City </th>
@@ -53,12 +52,11 @@ $CartSQL = $dbCon ->query("SELECT * FROM CART");
                 <tr id="rows<?php echo $rows['UserID'];?>">
 
                     <?php
-                    $ID = $rows['userID'];                    
+                    $ID = $rows['userID'];
                     $Fname = $rows['fname'];
                     $Lame = $rows['lname'];
                     $Email = $rows['email'];
                     $CreditCard = $rows['creditCard'];
-                    $Phone = $rows['phone'];
                     $Address1 = $rows['address1'];
                     $Address2 = $rows['address2'];
                     $City = $rows['city'];
@@ -73,7 +71,6 @@ $CartSQL = $dbCon ->query("SELECT * FROM CART");
                     <td><?php echo $Lame?></td>
                     <td><?php echo $Email?></td>
                     <td><?php echo $CreditCard?></td>
-                    <td><?php echo $Phone?></td>
                     <td><?php echo $Address1?></td>
                     <td><?php echo $Address2?></td>
                     <td><?php echo $City?></td>
@@ -91,10 +88,10 @@ $CartSQL = $dbCon ->query("SELECT * FROM CART");
                     }
                     ?>
             </table>
-        </br>
-        <hr>
-        <h2>Login Table</h2>
-        <p>List of user name and password</p>
+            </br>
+            <hr>
+            <h2>Login Table</h2>
+            <p>List of user name and password</p>
 
 
             <table id = "user_table" >
@@ -132,10 +129,10 @@ $CartSQL = $dbCon ->query("SELECT * FROM CART");
                         echo "No data available at this time";
                     }
                     ?>
-                </table>
-        <hr>
-        <h2>Product Table</h2>
-        <p>List of products with appropriate info</p>
+            </table>
+            <hr>
+            <h2>Product Table</h2>
+            <p>List of products with appropriate info</p>
 
 
             <table id = "user_table" >
@@ -182,9 +179,9 @@ $CartSQL = $dbCon ->query("SELECT * FROM CART");
                     ?>
             </table>
 
-        <hr>
-        <h2>Cart Table</h2>
-        <p>List of products with appropriate info</p>
+            <hr>
+            <h2>Cart Table</h2>
+            <p>List of products with appropriate info</p>
 
 
             <table id = "user_table" >
@@ -215,7 +212,7 @@ $CartSQL = $dbCon ->query("SELECT * FROM CART");
                     $ratings = $rows['ratings'];
                     $dateOfPurchase = $rows['dateOfPurchase'];
                     $isPurchasedFlag = $rows['isPurchasedFlag'];
-                    $Option = $rows['option'];
+                    $Option = $rows['options'];
                     $addprice = $rows['addprice'];
 
                     ?>

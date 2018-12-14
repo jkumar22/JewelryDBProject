@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../Style/styleSheet.css">
 </head>
 
-<body>
+<body background="../Images/bg4.jpg">
 <?php $currentPage ='About'; include 'header.php'; ?>
 <form class="modal-content" method="post" style="width:50%" action= "<?= $_SERVER['PHP_SELF']; ?>" autocomplete="on">
     <div class="container">
@@ -18,16 +18,16 @@
             krisah@umich.edu
         </p>
         <p>
+            <B>Vishvadha Kari</B> </br>
+            vkari@umich.edu
+        </p>
+        <p>
             <B>Jay Patel</B> </br>
             jnpatel@umich.edu
         </p>
         <p>
             <B>Deekshita Seenivasan</B> </br>
             sdeekshi@umich.edu
-        </p>
-        <p>
-            <B>Kari Vishvadha</B> </br>
-            vkari@umich.edu
         </p>
         <p>
             <B>Sriyashaswini Vore</B></br>
