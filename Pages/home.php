@@ -271,6 +271,52 @@ function quarryProductInfo($value)
         }
     }
 }
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../Style/styleSheet.css">
+</head>
 
+<body></body>
+var price = 0;
+var shipping = calculateShipping(zip);
+
+function calculateShipping(zip){
+var result = 0;
+if (48100<= zip && zip <= 48200){
+    result = 10;
+}
+else if (48200 <= zip && zip <= 48300){
+    result = 15;
+}
+else if (48300 <= zip && zip <= 48400){
+    result = 20;
+}
+else if (48400 <= zip && zip <= 48500){
+    result = 25;
+}
+else if (48500 <= zip && zip <= 48600){
+    result = 30;
+}
+else if (48600 <= zip && zip <= 48700){
+    result = 35;
+}
+
+else{
+    window.alert("Please enter correct Zip Code");
+}
+
+window.alert("Shipping is $" + result + "");
+}
+
+/* ]]> */
+</script>
+</head>
+<body>
+<p>Zip Code:
+<input type="text" name="zip" id="zip" />
+<input type="button" value="Calculate Shipping Cost" onclick="calculateShipping(document.getElementById('zip').value);" /></p>
+</body>
+</html>
 ?>
 
