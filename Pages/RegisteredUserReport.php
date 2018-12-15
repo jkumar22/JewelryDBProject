@@ -5,6 +5,8 @@ $sql = $dbCon ->query("SELECT * FROM USER");
 $loginSQL = $dbCon ->query("SELECT * FROM LOGIN");
 $ProductSQL = $dbCon ->query("SELECT * FROM PRODUCT");
 $CartSQL = $dbCon ->query("SELECT * FROM CART");
+$COMPLAINSQL = $dbCon ->query("SELECT * FROM COMPLAIN");
+
 
 
 
@@ -114,7 +116,7 @@ $CartSQL = $dbCon ->query("SELECT * FROM CART");
                     <?php
                     $ID = $rows['userID'];
                     $Email = $rows['email'];
-                    $Password = $rows['password'];
+                    $Passwords = $rows['password'];
                     $adminFlag = $rows['adminFlag'];
                     ?>
                     <td><?php echo $ID?></td>
@@ -225,6 +227,54 @@ $CartSQL = $dbCon ->query("SELECT * FROM CART");
                     <td><?php echo $isPurchasedFlag?></td>
                     <td><?php echo $Option?></td>
                     <td><?php echo $addprice?></td>
+
+                    <?php
+                    }
+                    }
+                    else
+                    {
+                        echo "No data available at this time";
+                    }
+                    ?>
+            </table>
+
+            <hr>
+            <h2>Feedback Table</h2>
+            <p>User's feedback based on product info</p>
+
+
+            <table id = "user_table" >
+                <tr >
+                    <th>Feedback ID</th>
+                    <th>ProductID</th>
+                    <th>Order Number</th>
+                    <th>UserID</th>
+                    <th>Description</th>
+                </tr>
+
+                <!-- looping each agency in each row -->
+                <?php
+                if($COMPLAINSQL ->num_rows != 0)
+                {
+                while ($rows = $COMPLAINSQL->fetch_assoc())
+                {
+                ?>
+                <tr id="rows<?php echo $rows['purchaseID'];?>">
+
+                    <?php
+                    $complainID = $rows['complainID'];
+                    $productID = $rows['productID'];
+                    $purchaseID = $rows['purchaseID'];
+                    $userID = $rows['userID'];
+                    $description = $rows['description'];
+
+                    ?>
+
+                    <td><?php echo $complainID?></td>
+                    <td><?php echo $productID?></td>
+                    <td><?php echo $purchaseID?></td>
+                    <td><?php echo $userID?></td>
+                    <td><?php echo $description?></td>
 
                     <?php
                     }

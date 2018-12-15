@@ -38,6 +38,7 @@ $userID = $_SESSION['userID']; //User ID
             <?PHP
             }
             $Image = "..\Images\\" . $rows['image'];
+            $purchaseID = $rows['purchaseID'];
             $productID = $rows['productID'];
             $price = $rows['price'];
             $inventory = $rows['inventory'];
@@ -53,8 +54,10 @@ $userID = $_SESSION['userID']; //User ID
                 <?php } ?>
                 <p><b>Price:$ <?=$price?> </b></p>
                 <p>Purchased on: <?=$dateOfPurchase?></p>
+                <a href="Complaint.php?secureVar1=<?=$productID?>&secureVar2=<?=$purchaseID?>"><input type="button" class="customizebt" value="FeedBack"></a>
                 <?php if($Option != ""){ ?>
-                    <a href="Customizebracelet.php?secureVar1=<?= $productID ?> & secureVar2=BABYBRACELETS"><input type="button" class="customizebt" value="Customize Again"></a>
+                    <a href="Customizebracelet.php?secureVar1=<?= $productID ?> & secureVar2=BABYBRACELETS"><input type="button" value="Customize Again"></a>
+
                 <?php }else {?>
                     <a href="Cart.php?secureVar=<?= $productID ?>"><input type="button" value="Buy Again"></a>
                 <?php } ?>
