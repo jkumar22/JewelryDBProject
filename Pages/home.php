@@ -269,3 +269,4 @@ function quarryProductInfo($value)
         }
     }
 
+}
