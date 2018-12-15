@@ -2,7 +2,7 @@
 
 include('../DBConnection/DBconnection.php');
 
-$userId = $Fname = $Lname = $Email = $Password = $CreditCard = $ConfirmPassword = $Address = $Address2 = $City = $State = $Zip = $Country = $cvv = $ExperationDate = "";
+$userId = $Fname = $Lname = $Email = $Password = $CreditCard = $ConfirmPassword = $Address = $Address2 = $City = $State = $Zip = $Country = $cvv = $ExperationDate = $newsletter =  "";
 $Fname_Error = $Lname_Error = $Email_Error = $CreditCard_Error = $Password_Error = $ConfirmPassword_Error = $Address_Error = $Address2_Error = $City_Error = $State_Error = $Zip_Error = $Country_Error = $cvv_Error =  $ExperationDate_Error = "";
 $IsError = "false";
 
@@ -74,7 +74,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
     }
     else{
         $Password = "";
-        $ConfirmPassword = ""; 
+        $ConfirmPassword = "";
         $ConfirmPassword_Error= "Password did not match";
         $Password_Error= "Password did not match";
         $isError = true;
@@ -196,10 +196,18 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
         }
     }
 
+    if(isset($_POST['newsletter']) && $_POST['newsletter'] == 'Yes')
+    {
+        $newsletter = 1;
+    }
+    else{
+        //echo "Do not Need wheelchair access.";
+    }
+
     if ($IsError == "false")
     {
-        $sql_add = "INSERT INTO USER (fname,lname,email,address1,address2,city,state,zip,country,date)
-			VALUES ('$Fname','$Lname','$Email','$Address','$Address2','$City','$State','$Zip','$Country','$dateval')";
+        $sql_add = "INSERT INTO USER (fname,lname,email, creditCard,address1,address2,city,state,zip,country,date, markingEmailFlag)
+			VALUES ('$Fname','$Lname','$Email','$CreditCard','$Address','$Address2','$City','$State','$Zip','$Country','$dateval', '$newsletter')";
 
         if (mysqli_query($dbCon, $sql_add))
         {
@@ -218,7 +226,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST")
                 $userId = $row["userID"];
             }
         }
-        
+
         echo  "UserID: " . $userId . "<br>";
         echo  "Email: " . $Email . "<br>";
         echo  "password: " . $Password . "<br>";
