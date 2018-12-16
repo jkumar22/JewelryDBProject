@@ -1,0 +1,36 @@
+<?php
+
+include('../DBConnection/DBconnection.php');
+
+$Rating = "";
+
+
+
+if($_SERVER["REQUEST_METHOD"] == "POST")
+{
+
+    if ($IsError == "false")
+    {
+        $InputValue = $_POST["rating"];
+        echo  $InputValue;
+//        $sql = "SELECT userID FROM USER WHERE email = '$Email'";
+//        $result = mysqli_query($dbCon, $sql);
+//
+//        if (mysqli_num_rows($result) > 0) {
+//            // output data of each row
+//            while($row = mysqli_fetch_assoc($result)) {
+//                $userId = $row["userID"];
+//            }
+//        }
+//
+//        echo  "UserID: " . $userId . "<br>";
+//        echo  "Email: " . $Email . "<br>";
+//        echo  "password: " . $Password . "<br>";
+//
+//
+//        $sql_addTwo = "INSERT INTO LOGIN (userID, email, password, adminFlag)
+//			VALUES ('$userId','$Email','$Password', 0)";
+//
+    }
+
+}

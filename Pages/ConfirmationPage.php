@@ -9,6 +9,7 @@
 <body>
 <?php $currentPage ='confirmationPage'; include 'header.php'; ?>
 <form class="modal-content" style="width:50%">
+    <body background="../Images/bg4.jpg">
     <div class="container">
         <h2>Thank you for Registering!</h2>
         <p>You can now shop our Awesome Jewelry.</p>
