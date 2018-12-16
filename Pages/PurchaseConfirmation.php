@@ -2,7 +2,7 @@
 
 $userID = $_SESSION['userID']; //User ID
 
-$userId = $Fname = $Lname = $Email = $CreditCard = $Phone = $Address1 = $Address2 = $City = $State = $Zip = $Country = "";
+$userId = $Fname = $Lname = $Email = $CreditCard = $Phone = $Address1 = $Address2 = $City = $State = $Zip = $Country = $Rating = "";
 
 
 $sql = $dbCon ->query("SELECT * FROM USER WHERE userID = '$userID'");
@@ -15,7 +15,6 @@ $sql = $dbCon ->query("SELECT * FROM USER WHERE userID = '$userID'");
             $Lname = $rows['lname'];
             $Email = $rows['email'];
             $CreditCard = substr($rows['creditCard'],-4);
-            $Phone = $rows['phone'];
             $Address1 = $rows['address1'];
             $Address2 = $rows['address2'];
             $City = $rows['city'];

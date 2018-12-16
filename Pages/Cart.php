@@ -2,7 +2,7 @@
 
 include('../DBConnection/DBconnection.php');
 
-$TotalPrice = $productID = $userID = $dateOfPurchase = $purchaseID =  "";
+$TotalPrice = $productID = $userID = $dateOfPurchase = $purchaseID = $Option = $color =  "";
 $userID = $_SESSION['userID']; //User ID
 
 if((isset($_SESSION['loggedIn'])) && ($_SESSION['loggedIn'] == "True" ))
@@ -44,7 +44,6 @@ if (isset($_POST['Remove']))
     $CartSQL = $dbCon ->query("SELECT productID,option2 FROM CART Where purchaseID = '$Purchase_Id'");
     if($CartSQL ->num_rows != 0){while ($rows = $CartSQL->fetch_assoc()){ $Option = $rows['option2']; $productID = $rows['productID'];}}
     $color = $Option;
-    echo $color;
 
         if ($color == "Gold (+$05)") {
             $sql = $dbCon->query("UPDATE BABYBRACELETS  SET option1Stock = option1Stock + 1 WHERE productID = '$productID'");
@@ -100,7 +99,7 @@ else if (isset($_POST['CheckOut']))
     <link rel="stylesheet" type="text/css" href="../Style/styleSheet.css">
 </head>
 
-<body background="../Images/bg4.jpg">
+<body>
 <?php $currentPage ='cart'; include 'header.php'; ?>
 <form class="modal-content" method="post" style="width:50%" action="Cart.php" autocomplete="on">
     <div class="container">

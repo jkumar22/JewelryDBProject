@@ -91,7 +91,7 @@ if (isset($_POST['addToCart']))
     <link rel="stylesheet" type="text/css" href="../Style/styleSheet.css">
 </head>
 
-<body background="../Images/bg4.jpg">
+<body>
 <?php $currentPage ='home'; include 'header.php'; ?>
 
 <form class="modal-content" method="post" style="width:50%" action= "Customizebracelet.php">

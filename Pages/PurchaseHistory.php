@@ -12,7 +12,7 @@ $userID = $_SESSION['userID']; //User ID
     <link rel="stylesheet" type="text/css" href="../Style/styleSheet.css">
 </head>
 
-<body background="../Images/bg4.jpg">
+<body>
 <?php $currentPage ='user'; include 'header.php'; ?>
 <form class="modal-content" method="post" style="width:50%" action= "<?= $_SERVER['PHP_SELF']; ?>" autocomplete="on">
     <div class="container">
@@ -45,7 +45,10 @@ $userID = $_SESSION['userID']; //User ID
             $inventoryDate = $rows['inventoryDate'];
             $stock = $rows['stock'];
             $dateOfPurchase = $rows['dateOfPurchase'];
-            $Option = $rows['options'];
+            $Option1 = $rows['option1'];
+            $Option2 = $rows['option2'];
+            $Option3 = $rows['option3'];
+            $Option = "Size:".$Option1." Option2:" .$Option2." ".$Option3;
             ?>
             <div align="center" class="column"; style="width:20%; margin-right:50px; margin-left:50px" >
                 <img src="<?= $Image ?>"  width="100" height="100" align="middle" >

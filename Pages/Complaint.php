@@ -57,7 +57,7 @@ if (isset($_POST['submitComplain']))
     if ($IsError == "false")
     {
 
-        $sql_add = "INSERT INTO complain (productID,purchaseID,userID,description)
+        $sql_add = "INSERT INTO COMPLAIN (productID,purchaseID,userID,description)
                 VALUES ('$productID','$purchaseID','$userID','$description')";
 
         if (mysqli_query($dbCon, $sql_add)) {
@@ -80,7 +80,7 @@ if (isset($_POST['submitComplain']))
 
 <body>
 <?php $currentPage ='Complaint'; include 'header.php'; ?>
-    <body background="../Images/bg4.jpg">
+    <body>
         <form class="modal-content" method="post" style="width:50%" action="Complaint.php">
             <div class="container">
                 <h2>We're sorry for the inconvenience.</h2>

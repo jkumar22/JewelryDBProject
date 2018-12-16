@@ -6,7 +6,7 @@
     <link rel="stylesheet" type="text/css" href="../Style/styleSheet.css">
 </head>
 
-<body background="../Images/bg4.jpg">
+<body>
 <?php $currentPage ='About'; include 'header.php'; ?>
 <form class="modal-content" method="post" style="width:50%" action= "<?= $_SERVER['PHP_SELF']; ?>" autocomplete="on">
     <div class="container">

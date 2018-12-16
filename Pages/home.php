@@ -1,7 +1,7 @@
 <?php
 
 include('../DBConnection/DBconnection.php');
-
+//background="../Images/bg4.jpg"
 $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = "";
 
 ?>
@@ -12,10 +12,10 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
         <link rel="stylesheet" type="text/css" href="../Style/styleSheet.css">
     </head>
 
-    <body background="../Images/bg4.jpg">
+    <body >
     <?php $currentPage ='home'; include 'header.php'; ?>
 
-    <form class="modal-content" method="post" style="width:50%" action= "<?= $_SERVER['PHP_SELF']; ?>" autocomplete="on">
+    <form class="modal-content" method="post" style="width:60%" action= "<?= $_SERVER['PHP_SELF']; ?>" autocomplete="on">
         <div class="container">
 
             <h2>Welcome to Awesome Jewellery Home!</h2>
@@ -25,7 +25,7 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
             <h3><U>Most Popular</U></h3>
             <div style="width:100%; display: flex;">
                 <?php
-                $sqlString = "SELECT * From PRODUCT where productID IN (SELECT productID FROM CART GROUP BY productID ORDER BY count(productID) DESC LIMIT 3)";
+                $sqlString = "SELECT * From PRODUCT JOIN CART Where PRODUCT.productID = CART.productID and CART.isPurchasedFlag = 1 GROUP BY CART.productID ORDER BY count(CART.productID) DESC LIMIT 3";
                 $quarrySQL = $dbCon ->query($sqlString);
 
                 if($quarrySQL ->num_rows != 0)
@@ -36,6 +36,7 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
 
                         $Image = "..\Images\\" . $rows['image'];
                         $productID = $rows['productID'];
+                        $ptype = $rows['ptype'];
                         $price = $rows['price'];
                         $inventory = $rows['inventory'];
                         $inventoryDate = $rows['inventoryDate'];
@@ -44,7 +45,12 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
                         <div align="center" class="column"; style="width:20%; margin-right:50px; margin-left:50px" >
                             <img src="<?= $Image ?>"  width="100" height="100" align="middle" >
                             <p><b>Price:$ <?=$price?> </b></p>
-                            <a href="Cart.php?secureVar=<?= $productID ?>"><input type="button" value="Add to Cart"></a>
+                            <?php
+                            if ($ptype == "Baby Bracelet" or $ptype == "Mother Bracelet" or $ptype == "GM Bracelet" or $ptype == "Wedding Bracelet"){?>
+                            <a href="Customizebracelet.php?secureVar1=<?= $productID ?> & secureVar2=BABYBRACELETS"><input type="button" class="customizebt" value="Customize"></a>
+                            <?php }else { ?>
+                                <a href="Cart.php?secureVar=<?= $productID ?>"><input type="button" value="Add to Cart"></a>
+                            <?php } ?>
                         </div>
                     <?php }}?>
             </div>

@@ -118,7 +118,7 @@ $COMPLAINSQL = $dbCon ->query("SELECT * FROM COMPLAIN");
                     ?>
                     <td><?php echo $ID?></td>
                     <td><?php echo $Email?></td>
-                    <td><?php echo $Password?></td>
+                    <td><?php  ?></td>
                     <td><?php echo $adminFlag?></td>
                     <?php
                     }

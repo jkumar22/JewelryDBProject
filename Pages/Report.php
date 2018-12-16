@@ -146,9 +146,9 @@ chart.render();
                 $Revenue = $sold * $Price;
                 $Profit = $Revenue - $InventoryCost;
 
-                $TotalInventoryCost = $TotalInventoryCost + $InventoryCost;
-                $TotalRevenue = $TotalRevenue + $Revenue;
-                $TotalProfit = $TotalProfit + $Profit;
+                //$TotalInventoryCost = $TotalInventoryCost + $InventoryCost;
+                //$TotalRevenue = $TotalRevenue + $Revenue;
+                //$TotalProfit = $TotalProfit + $Profit;
 
                 ?>
 
@@ -250,10 +250,6 @@ chart.render();
                 $Profit4 = $Revenue4 - ($option4Inventory * $option4Cost);
                 $Profit = $Profit1.", ". $Profit2. ", ". $Profit3.", ".$Profit4;
 
-                $TotalInventoryCost = $TotalInventoryCost + $InventoryCost;
-                $TotalRevenue = $TotalRevenue + $Revenue;
-                $TotalProfit = $TotalProfit + $Profit;
-
                 ?>
 
                 <td><?php echo $ID?></td>
@@ -337,10 +333,6 @@ chart.render();
                 $Profit2 = $Revenue2 - ($option2Inventory * $option2Cost);
                 $Profit = $Profit1.", ". $Profit2;
 
-                $TotalInventoryCost = $TotalInventoryCost + $InventoryCost;
-                $TotalRevenue = $TotalRevenue + $Revenue;
-                $TotalProfit = $TotalProfit + $Profit;
-
                 ?>
 
                 <td><?php echo $ID?></td>
@@ -423,10 +415,6 @@ chart.render();
                 $Profit1 = $Revenue1 - ($option1Inventory * $option1Cost);
                 $Profit2 = $Revenue2 - ($option2Inventory * $option2Cost);
                 $Profit = $Profit1.", ". $Profit2;
-
-                $TotalInventoryCost = $TotalInventoryCost + $InventoryCost;
-                $TotalRevenue = $TotalRevenue + $Revenue;
-                $TotalProfit = $TotalProfit + $Profit;
 
                 ?>
 
@@ -526,10 +514,6 @@ chart.render();
                 $Profit3 = $Revenue3 - ($option3Inventory * $option3Cost);
                 $Profit4 = $Revenue4 - ($option4Inventory * $option4Cost);
                 $Profit = $Profit1.", ". $Profit2. ", ". $Profit3.", ".$Profit4;
-
-                $TotalInventoryCost = $TotalInventoryCost + $InventoryCost;
-                $TotalRevenue = $TotalRevenue + $Revenue;
-                $TotalProfit = $TotalProfit + $Profit;
 
                 ?>
 

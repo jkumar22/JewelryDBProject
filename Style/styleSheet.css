@@ -60,7 +60,7 @@ button:hover {
 button.removeBTN{background-color: #FF5733;}
 
 input[class = customizebt] {
-    background-color: #FF5733;
+    background-color: #3498DB;
     color: white;
     padding: 14px 20px;
     margin: 8px 0;
