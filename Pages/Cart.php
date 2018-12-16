@@ -2,7 +2,7 @@
 
 include('../DBConnection/DBconnection.php');
 
-$TotalPrice = $productID = $userID = $dateOfPurchase = $purchaseID = $Option = $color =  "";
+$TotalPrice = $productID = $userID = $dateOfPurchase = $purchaseID = $Option = $color = $CouponCode = $CouponCode_Error = $discountedPrice = $OldTotalPrice = $TotalPrice = "";
 $userID = $_SESSION['userID']; //User ID
 
 if((isset($_SESSION['loggedIn'])) && ($_SESSION['loggedIn'] == "True" ))
@@ -36,6 +36,30 @@ if((isset($_SESSION['loggedIn'])) && ($_SESSION['loggedIn'] == "True" ))
     echo "<script>if(confirm('$message')){document.location.href='LogIn.php'}else{document.location.href='index.php'};</script>";
 }
 
+if (isset($_POST['AddCoupon']))
+{
+    $CouponCode = strip_tags($_POST['CouponCode']);
+
+    $CodeSQL = $dbCon ->query("SELECT discountedPrice FROM COUPON Where code = '$CouponCode'");
+
+    if($CodeSQL ->num_rows != 0){while ($rows = $CodeSQL->fetch_assoc()){$discountedPrice = $rows['discountedPrice'];}
+        $TotalPrice = (int)$TotalPrice - (int)$discountedPrice;
+        $CouponCode_Error = " Code Added";
+     }
+     else
+     {
+        $CouponCode_Error = " Code is Invalid";
+     }
+}
+
+if (isset($_POST['RemoveCoupon']))
+{
+        $TotalPrice = (int)$TotalPrice + (int)$discountedPrice;
+        $discountedPrice = 0;
+        $CouponCode = "";
+        $CouponCode_Error = " Code Removed";
+
+}
 
 if (isset($_POST['Remove']))
 {
@@ -152,9 +176,30 @@ else if (isset($_POST['CheckOut']))
             <?php }}?>
         </div>
         <hr>
+        <div style="width:100%;">
+            <div style="width:30%;">
+                <label for="Fname"><b>Coupon Code</b></label>
+                <span class="error"><?php echo $CouponCode_Error ;?></span>
+                <input type="text" placeholder="code" name="CouponCode" value="<?= $CouponCode?>">
+            </div>
+            <div style="width:50%; display: flex;">
+                <div style="width:25%; float:right;" >
+                <button type="submit" name="AddCoupon" class="customizeBTN">Add</button>
+                </div>
+                <div style="width:25%;">
+                <button type="submit" name="RemoveCoupon" class="removeBTN">Remove</button>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <?php if ($discountedPrice >0) {?>
+            <h5>Before Discount:<b><?= $TotalPrice + $discountedPrice ?>$ </b></h5>
+            <h4>Discount:<b> - <?= $discountedPrice ?>$ </b></h4>
+        <?php }?>
         <h3>Your Total is:<b> <?= $TotalPrice ?>$ </b></h3>
         <button type="submit" name="CheckOut" value="<?= $productID ?>" >Check Out</button>
 
+        </div>
     </div>
 </form>
 </body>
