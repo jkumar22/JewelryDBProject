@@ -1,7 +1,7 @@
 <?php
 include('../DBConnection/DBconnection.php');
 
-$sql = $dbCon ->query("SELECT * FROM USER");
+$sql = $dbCon ->query("SELECT * FROM USER join ZipCode WHERE USER.state = ZipCode.ZipID");
 $loginSQL = $dbCon ->query("SELECT * FROM LOGIN");
 $ProductSQL = $dbCon ->query("SELECT * FROM PRODUCT");
 $CartSQL = $dbCon ->query("SELECT * FROM CART");
@@ -59,7 +59,7 @@ $COMPLAINSQL = $dbCon ->query("SELECT * FROM COMPLAIN");
                     $Address1 = $rows['address1'];
                     $Address2 = $rows['address2'];
                     $City = $rows['city'];
-                    $State = $rows['state'];
+                    $State = $rows['StateName'];
                     $Zip = $rows['zip'];
                     $Country = $rows['country'];
                     $Date = $rows['date'];

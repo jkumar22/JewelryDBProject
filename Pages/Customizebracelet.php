@@ -12,7 +12,6 @@ if (isset( $_GET['secureVar1'] ) && isset( $_GET['secureVar2'] ) )
     $WhichProduct = $_GET['secureVar2'];
 }
 
-
 if (isset($_POST['addToCart']))
 {
     $productID = $_POST['productID'];
@@ -76,7 +75,7 @@ if (isset($_POST['addToCart']))
                 $sql = $dbCon->query("UPDATE MOTHERBRACELETS  SET option4Stock = option4Stock - 1 WHERE productID = '$productID'");
             }
         }
-        //header('Location: Cart.php');
+        header('Location: Cart.php');
     }
     else{
         echo  "Error: " . $sql_addTwo . "<br>" . mysqli_error($dbCon);

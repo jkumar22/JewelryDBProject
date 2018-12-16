@@ -5,7 +5,7 @@ $userID = $_SESSION['userID']; //User ID
 $userId = $Fname = $Lname = $Email = $CreditCard = $Phone = $Address1 = $Address2 = $City = $State = $Zip = $Country = $Rating = "";
 
 
-$sql = $dbCon ->query("SELECT * FROM USER WHERE userID = '$userID'");
+$sql = $dbCon ->query("SELECT * FROM USER join ZipCode WHERE USER.state = ZipCode.ZipID and USER.userID = '$userID'");
     if($sql ->num_rows != 0)
     {
         while ($rows = $sql->fetch_assoc())
@@ -18,7 +18,7 @@ $sql = $dbCon ->query("SELECT * FROM USER WHERE userID = '$userID'");
             $Address1 = $rows['address1'];
             $Address2 = $rows['address2'];
             $City = $rows['city'];
-            $State = $rows['state'];
+            $State = $rows['StateName'];
             $Zip = $rows['zip'];
             $Country = $rows['country'];
         }

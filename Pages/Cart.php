@@ -2,6 +2,29 @@
 
 include('../DBConnection/DBconnection.php');
 
+$Address = $Address2 = $City = $State = $Zip = $Country = $CurrentShippingCost = $CreditCard = "";
+$ZipID = $StateName = $ZipMinimum = $ZipMaximum = $ShippingCost = ""; 
+$Address_Error = $Address2_Error = $City_Error = $State_Error = $Zip_Error= "";
+$IsError = "false";
+$userID = $_SESSION['userID']; //User ID
+
+$sql = $dbCon ->query("SELECT * FROM USER join ZipCode WHERE USER.state = ZipCode.ZipID and USER.userID = '$userID'");
+                    if($sql ->num_rows != 0)
+                    {
+                        while ($rows = $sql->fetch_assoc())
+                        {
+                            $ID = $rows['userID'];
+                            $CreditCard = $rows['creditCard'];
+                            $Address = $rows['address1'];
+                            $Address2 = $rows['address2'];
+                            $City = $rows['city'];
+                            $State = $rows['state'];
+                            $Zip = $rows['zip'];
+                            $Country = $rows['country'];
+                            $CurrentShippingCost = $rows['ShippingCost'];
+                        }
+                    }
+
 $TotalPrice = $productID = $userID = $dateOfPurchase = $purchaseID = $Option = $color = $CouponCode = $CouponCode_Error = $discountedPrice = $OldTotalPrice = $TotalPrice = "";
 $userID = $_SESSION['userID']; //User ID
 
@@ -61,6 +84,63 @@ if (isset($_POST['RemoveCoupon']))
 
 }
 
+if (isset($_POST['UpdateAddress']))
+{
+    $IsError = "false";
+        //Address
+    $InputValue = $_POST['address'];
+    if (validateInput($InputValue) == "true")
+    {
+        $Address = DoublecheckText($InputValue);
+        $Address_Error = "";
+    }
+    else{
+        $Address_Error = validateInput($InputValue);
+        $IsError = "true";
+    }
+
+    //Address2
+    $InputValue = $_POST['address2'];
+    if (!empty($InputValue))
+    {
+        $Address2 = DoublecheckText($InputValue);
+    }
+
+    //City
+    $InputValue = $_POST['city'];
+    if (validateInput($InputValue) == "true")
+    {
+        $City = DoublecheckText($InputValue);
+        $City_Error = "";
+    }
+    else{
+        $City_Error = validateInput($InputValue);
+        $IsError = "true";
+    }
+
+    //State
+    $State = $_POST['state'];
+
+    //zip
+    $InputValue = $_POST['zip'];
+    if (validateZipInput($InputValue) == "true")
+    {
+        $Zip = DoublecheckText($InputValue);
+        $Zip_Error = "";
+    }else{
+        $Zip_Error = validateZipInput($InputValue);
+        $IsError = "true";
+    }
+
+    if ($IsError == "false")
+    {
+        $sql = $dbCon ->query("UPDATE USER  SET address1 = '$Address', address2 = '$Address2', city = '$City',state = '$State',zip = '$Zip'WHERE userID = '$userID'");
+        header('Location: Cart.php');
+    }
+
+
+}
+
 if (isset($_POST['Remove']))
 {
     $Purchase_Id = strip_tags($_POST['Remove']);
@@ -105,7 +185,8 @@ if (isset($_POST['Remove']))
         $sql = $dbCon ->query("DELETE FROM CART WHERE purchaseID = '$Purchase_Id'");
         $sql = $dbCon ->query("UPDATE PRODUCT  SET stock = stock + 1 WHERE productID = '$productID'");
 }
-else if (isset($_POST['CheckOut']))
+
+if (isset($_POST['CheckOut']))
 {
     date_default_timezone_set("America/New_York");
     $dateOfPurchase = date("Y-m-d h:i:sa");
@@ -114,6 +195,67 @@ else if (isset($_POST['CheckOut']))
     header('Location: PurchaseConfirmation.php');
 }
 
+function validateInput($value)
+{
+    $valueIsEmpty = $ValueIsInvalid = "";
+    $Error = false;
+
+    if(empty($value))
+    {
+        $valueIsEmpty = "Required!";
+        $Error = true;
+        $IsError = "true";
+        return $valueIsEmpty;
+    }
+    else if (!preg_match("/^[0-9a-zA-Z ].*$/",$value))// check if name only contains letters and whitespace
+    {
+        $ValueIsInvalid = "Invalid Entry";
+        $Error = true;
+        $IsError = "true";
+        return $ValueIsInvalid;
+    }
+    else if ($Error == false)
+    {
+        $Good = "true";
+        return $Good;
+    }
+}
+
+function validateZipInput($value)
+{
+    $valueIsEmpty = $ValueIsInvalid = "";
+    $Error = false;
+
+    if(empty($value))
+    {
+        $valueIsEmpty = "Required!";
+        $Error = true;
+        $IsError = "true";
+        return $valueIsEmpty;
+    }
+
+    if((!preg_match("/^([0-9]{5})?$/i",$value)) && (!preg_match("/^([0-9]{5})(-[0-9]{4})?$/i",$value))) // check if name only contains correct Zip
+    {
+        $ValueIsInvalid = "Invalid Entry, Must be between 5-9 digits";
+        $Error = true;
+        $IsError = "true";
+        return $ValueIsInvalid;
+    }
+    if ($Error == false)
+    {
+        return "true";
+    }
+}
+
+function DoublecheckText($data)
+{
+    $data = strip_tags($data);
+    $data = trim($data);
+    $data = strip_tags($data);
+    $data = stripslashes($data);
+    $data = htmlspecialchars($data);
+    return $data;
+}
 
 ?>
 
@@ -125,7 +267,7 @@ else if (isset($_POST['CheckOut']))
 
 <body>
 <?php $currentPage ='cart'; include 'header.php'; ?>
-<form class="modal-content" method="post" style="width:50%" action="Cart.php" autocomplete="on">
+<form class="modal-content" method="post" style="width:60%" action="Cart.php" autocomplete="on">
     <div class="container">
         <h2>Your Awesome Jewelry Cart!</h2>
         <p>Fill up your cart.</p>
@@ -192,12 +334,57 @@ else if (isset($_POST['CheckOut']))
             </div>
         </div>
         <hr>
-        <?php if ($discountedPrice >0) {?>
-            <h5>Before Discount:<b><?= $TotalPrice + $discountedPrice ?>$ </b></h5>
-            <h4>Discount:<b> - <?= $discountedPrice ?>$ </b></h4>
-        <?php }?>
-        <h3>Your Total is:<b> <?= $TotalPrice ?>$ </b></h3>
-        <button type="submit" name="CheckOut" value="<?= $productID ?>" >Check Out</button>
+        <div style="width:50%;">
+            <label for="address"><b>Update Shipping Address</b></label>
+            <span class="error"><?php echo $Address_Error;?></span>
+            <input type="text" placeholder="Enter Address" name="address" value="<?= $Address ?>">
+
+            <label for="address2"><b>Address2</b></label>
+            <span class="error"><?php echo $Address2_Error;?></span>
+            <input type="text" placeholder="apt. 123" name="address2" value="<?= $Address2 ?>">
+
+            <label for="city"><b>City</b></label>
+            <span class="error"><?php echo $City_Error ;?></span>
+            <input type="text" placeholder="Enter City name" name="city" value="<?= $City ?>">
+
+            <label for="state"><b>State</b></label>
+            <span class="error"><?php echo $State_Error;?></span>
+            <select name="state" id="state">
+                <option value="" selected="selected">Select a State</option>
+                <?php 
+                    $sql = $dbCon ->query("SELECT * FROM ZipCode");
+                    if($sql ->num_rows != 0)
+                    {
+                        while ($rows = $sql->fetch_assoc())
+                        {
+                            $ZipID = $rows['ZipID'];
+                            $StateName = $rows['StateName'];
+                            $StateAbbreviation = $rows['StateAbbreviation'];
+                            $ZipMinimum = $rows['ZipMinimum'];
+                            $ZipMaximum = $rows['ZipMaximum'];
+                            $ShippingCost = $rows['ShippingCost'];
+                ?>
+            <option value="<?= $ZipID ?>"<?php if ( $State == $ZipID) echo "selected";?>><?= $StateName ?> (Zip: <?= $ZipMinimum ?> to <?= $ZipMaximum ?> | Shipping cost: "$ <?= $ShippingCost ?>)</option>
+                <?php }}?>
+            </select></BR>
+
+            <label for="zip"><b>Zipcode</b></label>
+            <span class="error"><?php echo $Zip_Error ;?></span>
+            <input type="text" placeholder="Enter Zipcode" name="zip" value="<?= $Zip ?>">
+        </div>
+            <div style="width:20%; display: flex;">
+                    <button type="submit" name="UpdateAddress" class="customizeBTN">Update Address</button>
+            </div>
+            <hr>
+                <h3>Credit Card Number:<b> *************<?= substr($CreditCard, -4); ?></b></h3>
+            <hr>
+            <?php if ($discountedPrice >0) {?>
+                <h5>Before Discount:<b>$<?= $TotalPrice + $discountedPrice ?></b></h5>
+                <h4>Discount:<b>- $<?= $discountedPrice ?></b></h4>
+            <?php }?>
+            <h4>Shipping Cost:<b> $<?= $CurrentShippingCost ?></b></h4>
+            <h3>Your Total is:<b> $<?= (int)$TotalPrice + (int)$CurrentShippingCost?></b></h3>
+            <button type="submit" name="CheckOut" value="<?= $productID ?>" >Check Out</button>
 
         </div>
     </div>
