@@ -19,20 +19,64 @@ if (isset($_POST['addToCart']))
     $WhichProduct = $_POST['WhichProduct'];
     $size = $_POST['size'];
     $color = $_POST['Bcolor'];
+    $BabyName = "";
     $BabyName = $_POST['BabyName'];
     $addprice = substr($color, -3, 2);
-    echo $addprice;
-    $Option = "Size:" . $size . " Option1:" . $color . " Option2:" . $BabyName;
+    //$Option = "Size:" . $size . " Option1:" . $color . " " . $BabyName;
+    $option1 = $size;
+    $option2 = $color;
+    $option3 = $BabyName;
     date_default_timezone_set("America/New_York");
     $dateOfPurchase = date("Y-m-d h:i:sa");
 
-    $sql_addTwo = "INSERT INTO CART (userID, productID, dateOfPurchase, options, addprice)
-        VALUES ('$userID','$productID','$dateOfPurchase', '$Option', $addprice)";
+    $sql_addTwo = "INSERT INTO CART (userID, productID, dateOfPurchase, option1,option2,option3, addprice)
+        VALUES ('$userID','$productID','$dateOfPurchase', '$option1', '$option2', '$option3', $addprice)";
 
     if (mysqli_query($dbCon, $sql_addTwo))
     {
         $sql = $dbCon ->query("UPDATE PRODUCT  SET stock = stock - 1 WHERE productID = '$productID'");
-        header('Location: Cart.php');
+        echo $color;
+
+        if($WhichProduct == "BABYBRACELETS") {
+            if ($color == "Gold (+$05)") {
+                $sql = $dbCon->query("UPDATE BABYBRACELETS  SET option1Stock = option1Stock - 1 WHERE productID = '$productID'");
+            }else if ($color == "Silver (+$07)") {
+                echo "option2";
+                $sql = $dbCon->query("UPDATE BABYBRACELETS  SET option2Stock = option2Stock - 1 WHERE productID = '$productID'");
+            }
+        }
+        else if($WhichProduct == "GMBRACELETS") {
+            if ($color == "Gold (+$80)") {
+                $sql = $dbCon->query("UPDATE GMBRACELETS  SET option1Stock = option1Stock - 1 WHERE productID = '$productID'");
+            }else if ($color == "Silver (+$50)") {
+                $sql = $dbCon->query("UPDATE GMBRACELETS  SET option2Stock = option2Stock - 1 WHERE productID = '$productID'");
+            }
+        }
+        else if($WhichProduct == "WEDDINGBRACELETS") {
+            if ($color == "1 Strand (+$20)")
+            {
+                $sql = $dbCon->query("UPDATE WEDDINGBRACELETS  SET option1Stock = option1Stock - 1 WHERE productID = '$productID'");
+            }
+            else if ($color == "2 Strands (+$40)") {
+                $sql = $dbCon->query("UPDATE WEDDINGBRACELETS  SET option2Stock = option2Stock - 1 WHERE productID = '$productID'");
+            }else if ($color == "3 Strands (+$60)") {
+                $sql = $dbCon->query("UPDATE WEDDINGBRACELETS  SET option3Stock = option3Stock - 1 WHERE productID = '$productID'");
+            }else if ($color == "4 Strands (+$80)") {
+                $sql = $dbCon->query("UPDATE WEDDINGBRACELETS  SET option4Stock = option4Stock - 1 WHERE productID = '$productID'");
+            }
+        }
+        else if($WhichProduct == "MOTHERBRACELETS") {
+            if ($color == "Garnet (+$20)") {
+                $sql = $dbCon->query("UPDATE MOTHERBRACELETS  SET option1Stock = option1Stock - 1 WHERE productID = '$productID'");
+            }else if ($color == "Amethyst (+$30)") {
+                $sql = $dbCon->query("UPDATE MOTHERBRACELETS  SET option2Stock = option2Stock - 1 WHERE productID = '$productID'");
+            }else if ($color == "Aquamarine (+$50)") {
+                $sql = $dbCon->query("UPDATE MOTHERBRACELETS  SET option3Stock = option3Stock - 1 WHERE productID = '$productID'");
+            }else if ($color == "Diamond (+$80)") {
+                $sql = $dbCon->query("UPDATE MOTHERBRACELETS  SET option4Stock = option4Stock - 1 WHERE productID = '$productID'");
+            }
+        }
+        //header('Location: Cart.php');
     }
     else{
         echo  "Error: " . $sql_addTwo . "<br>" . mysqli_error($dbCon);
@@ -71,6 +115,7 @@ if (isset($_POST['addToCart']))
                     while ($rows = $quarrySQL->fetch_assoc())
                     {
                         $Image = "..\Images\\" . $rows['image'];
+                        $productName = $rows['pname'];
                         $productID = $rows['productID'];
                         $price = $rows['price'];
                         $inventory = $rows['inventory'];
@@ -91,7 +136,7 @@ if (isset($_POST['addToCart']))
                                 <option value="Gold (+$05)"   <?= $color == 'Gold (+$05)' ? ' selected="selected"' : "" ?> >Gold (+$5)</option>
                                 <option value="Silver (+$07)" <?= $color == 'Silver (+$07)' ? ' selected="selected"' : "" ?> >Silver (+$7)</option>
                             </select>
-                            <label for="BabyName">Enter a Name</label>
+                            <label for="BabyName">Enter a Engraving</label>
                             <input type="text" placeholder="Enter Baby's Name" name="BabyName" value="<?= $BabyName ?>">
                             <p><b>Price:$ <?= $price ?> </b></p>
                             <button type="submit" name="addToCart" value="<?= $productID ?>" >Add to Cart</button>
@@ -134,13 +179,13 @@ if (isset($_POST['addToCart']))
                                 <option value="Aquamarine (+$50)"   <?= $color == 'Aquamarine (+$50)' ? ' selected="selected"' : "" ?>>Aquamarine (+$50)</option>
                                 <option value="Diamond (+$80)"   <?= $color == 'Diamond (+$80)' ? ' selected="selected"' : "" ?>>Diamond (+$80)</option>
                             </select>
-                            <label>Select a Birthstone Shape</label>
+                            <!--<label>Select a Birthstone Shape</label>
                             <select name="BabyName">
                                 <option value="Round"   <?= $color == 'Round' ? ' selected="selected"' : "" ?>>Round</option>
                                 <option value="Square"   <?= $color == 'Square' ? ' selected="selected"' : "" ?>>Square</option>
                                 <option value="Ovals"   <?= $color == 'Ovals' ? ' selected="selected"' : "" ?>>Ovals</option>
                                 <option value="Triangle"   <?= $color == 'Triangle' ? ' selected="selected"' : "" ?>>Triangle</option>
-                            </select>
+                            </select> -->
                             <p><b>Price:$ <?= $price ?> </b></p>
                             <button type="submit" name="addToCart" value="<?= $productID ?>" >Add to Cart</button>
                         </div>
@@ -180,13 +225,13 @@ if (isset($_POST['addToCart']))
                                 <option value="Gold (+$80)"   <?= $color == 'Gold (+$80)' ? ' selected="selected"' : "" ?> >Gold (+$80)</option>
                                 <option value="Silver (+$50)" <?= $color == 'Silver (+$50)' ? ' selected="selected"' : "" ?> >Silver (+$50)</option>
                             </select>
-                            <label>Select a Gemstone</label>
+                            <!--<label>Select a Gemstone</label>
                             <select name="BabyName">
                                 <option value="Aqua Chalcedony"   <?= $color == 'Aqua Chalcedony' ? ' selected="selected"' : "" ?>>Aqua Chalcedony</option>
                                 <option value="Carnelian"   <?= $color == 'Carnelian' ? ' selected="selected"' : "" ?>>Carnelian</option>
                                 <option value="Blue Topaz"   <?= $color == 'Blue Topaz' ? ' selected="selected"' : "" ?>>Blue Topaz</option>
                                 <option value="Black Onyx"   <?= $color == 'Black Onyx' ? ' selected="selected"' : "" ?>>Black Onyx</option>
-                            </select>
+                            </select> -->
                             <p><b>Price:$ <?= $price ?> </b></p>
                             <button type="submit" name="addToCart" value="<?= $productID ?>" >Add to Cart</button>
                         </div>
@@ -223,17 +268,17 @@ if (isset($_POST['addToCart']))
                             </select>
                             <label>Select Number of Strands</label>
                             <select name="Bcolor">
-                                <option value="1 Strands (+$20)"   <?= $color == '1 Strands (+$20)' ? ' selected="selected"' : "" ?> >1 Strands (+$20)</option>
+                                <option value="1 Strand (+$20)"   <?= $color == '1 Strand (+$20)' ? ' selected="selected"' : "" ?> >1 Strand (+$20)</option>
                                 <option value="2 Strands (+$40)"   <?= $color == '2 Strands (+$40)' ? ' selected="selected"' : "" ?> >2 Strands (+$40)</option>
                                 <option value="3 Strands (+$60)"   <?= $color == '3 Strands (+$60)' ? ' selected="selected"' : "" ?> >3 Strands (+$60)</option>
                                 <option value="4 Strands (+$80)"   <?= $color == '4 Strands (+$80)' ? ' selected="selected"' : "" ?> >4 Strands (+$80)</option>
                             </select>
-                            <label>Select a Color</label>
+                            <!--<label>Select a Color</label>
                             <select name="BabyName">
                                 <option value="While Gold"   <?= $color == 'While Gold' ? ' selected="selected"' : "" ?> >While Gold</option>
                                 <option value="Yellow Gold"   <?= $color == 'Yellow Gold' ? ' selected="selected"' : "" ?> >Yellow Gold</option>
                                 <option value="Rose Gold" <?= $color == 'Rose Gold' ? ' selected="selected"' : "" ?> >Rose Gold</option>
-                            </select>
+                            </select> -->
                             <p><b>Price:$ <?= $price ?> </b></p>
                             <button type="submit" name="addToCart" value="<?= $productID ?>" >Add to Cart</button>
                         </div>

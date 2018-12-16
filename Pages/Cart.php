@@ -40,11 +40,47 @@ if((isset($_SESSION['loggedIn'])) && ($_SESSION['loggedIn'] == "True" ))
 if (isset($_POST['Remove']))
 {
     $Purchase_Id = strip_tags($_POST['Remove']);
-    $productID = strip_tags($_POST['productID']);
 
-    $sql = $dbCon ->query("DELETE FROM CART WHERE purchaseID = '$Purchase_Id'");
-    $sql = $dbCon ->query("UPDATE PRODUCT  SET stock = stock + 1 WHERE productID = '$productID'");
-    // printing the changed recor
+    $CartSQL = $dbCon ->query("SELECT productID,option2 FROM CART Where purchaseID = '$Purchase_Id'");
+    if($CartSQL ->num_rows != 0){while ($rows = $CartSQL->fetch_assoc()){ $Option = $rows['option2']; $productID = $rows['productID'];}}
+    $color = $Option;
+    echo $color;
+
+        if ($color == "Gold (+$05)") {
+            $sql = $dbCon->query("UPDATE BABYBRACELETS  SET option1Stock = option1Stock + 1 WHERE productID = '$productID'");
+        }else if ($color == "Silver (+$07)") {
+            $sql = $dbCon->query("UPDATE BABYBRACELETS  SET option2Stock = option2Stock + 1 WHERE productID = '$productID'");
+        }
+
+        if ($color == "Gold (+$80)") {
+            $sql = $dbCon->query("UPDATE GMBRACELETS  SET option1Stock = option1Stock + 1 WHERE productID = '$productID'");
+        }else if ($color == "Silver (+$50)") {
+            $sql = $dbCon->query("UPDATE GMBRACELETS  SET option2Stock = option2Stock + 1 WHERE productID = '$productID'");
+        }
+
+        if ($color == "1 Strand (+$20)")
+        {
+            $sql = $dbCon->query("UPDATE WEDDINGBRACELETS  SET option1Stock = option1Stock + 1 WHERE productID = '$productID'");
+        }
+        else if ($color == "2 Strands (+$40)") {
+            $sql = $dbCon->query("UPDATE WEDDINGBRACELETS  SET option2Stock = option2Stock + 1 WHERE productID = '$productID'");
+        }else if ($color == "3 Strands (+$60)") {
+            $sql = $dbCon->query("UPDATE WEDDINGBRACELETS  SET option3Stock = option3Stock + 1 WHERE productID = '$productID'");
+        }else if ($color == "4 Strands (+$80)") {
+            $sql = $dbCon->query("UPDATE WEDDINGBRACELETS  SET option4Stock = option4Stock + 1 WHERE productID = '$productID'");
+        }
+
+        if ($color == "Garnet (+$20)") {
+            $sql = $dbCon->query("UPDATE MOTHERBRACELETS  SET option1Stock = option1Stock + 1 WHERE productID = '$productID'");
+        }else if ($color == "Amethyst (+$30)") {
+            $sql = $dbCon->query("UPDATE MOTHERBRACELETS  SET option2Stock = option2Stock + 1 WHERE productID = '$productID'");
+        }else if ($color == "Aquamarine (+$50)") {
+            $sql = $dbCon->query("UPDATE MOTHERBRACELETS  SET option3Stock = option3Stock + 1 WHERE productID = '$productID'");
+        }else if ($color == "Diamond (+$80)") {
+            $sql = $dbCon->query("UPDATE MOTHERBRACELETS  SET option4Stock = option4Stock + 1 WHERE productID = '$productID'");
+        }
+        $sql = $dbCon ->query("DELETE FROM CART WHERE purchaseID = '$Purchase_Id'");
+        $sql = $dbCon ->query("UPDATE PRODUCT  SET stock = stock + 1 WHERE productID = '$productID'");
 }
 else if (isset($_POST['CheckOut']))
 {
@@ -94,7 +130,11 @@ else if (isset($_POST['CheckOut']))
             $productID = $rows['productID'];
             $price = $rows['price'];
             $addprice = $rows['addprice'];
-            $Option = $rows['options'];
+            $Option1 = $rows['option1'];
+            $Option2 = $rows['option2'];
+            $Option3 = $rows['option3'];
+            $Option = "Size:".$Option1." Option2:" .$Option2." ".$Option3;
+
             $TotalPrice = ((int)$TotalPrice) + ((int)$price) + ((int)$addprice);
             $inventory = $rows['inventory'];
             $inventoryDate = $rows['inventoryDate'];
@@ -105,10 +145,9 @@ else if (isset($_POST['CheckOut']))
                 <img src="<?= $Image ?>"  width="100" height="100" align="middle" >
                 <p><b>Price:$</b><?=$price?></p>
                 <?php if($addprice != 0) { ?>
-                    <p><b>Options:</b><?=$Option?></p>
+                    <p>Options1:<?=$Option?></p>
                     <p><b>Additional Cost:$</b><?=$addprice?></p>
                 <?php } ?>
-                <input type="hidden" name="productID" value="<?= $productID ?>"/>
                 <button type="submit" class="removeBTN" name="Remove" value="<?= $purchaseID ?>" >Remove</button>
             </div>
             <?php }}?>

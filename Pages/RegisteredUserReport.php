@@ -7,9 +7,6 @@ $ProductSQL = $dbCon ->query("SELECT * FROM PRODUCT");
 $CartSQL = $dbCon ->query("SELECT * FROM CART");
 $COMPLAINSQL = $dbCon ->query("SELECT * FROM COMPLAIN");
 
-
-
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -139,7 +136,9 @@ $COMPLAINSQL = $dbCon ->query("SELECT * FROM COMPLAIN");
 
             <table id = "user_table" >
                 <tr >
-                    <th>ID</th>
+                    <th>Product ID</th>
+                    <th>Product Name</th>
+                    <th>Product Type</th>
                     <th>Price</th>
                     <th>Inventory</th>
                     <th>InventoryDate</th>
@@ -158,6 +157,8 @@ $COMPLAINSQL = $dbCon ->query("SELECT * FROM COMPLAIN");
 
                     <?php
                     $ID = $rows['productID'];
+                    $name = $rows['pname'];
+                    $type = $rows['ptype'];
                     $Price = $rows['price'];
                     $Inventory = $rows['inventory'];
                     $InventoryDate = $rows['inventoryDate'];
@@ -166,6 +167,8 @@ $COMPLAINSQL = $dbCon ->query("SELECT * FROM COMPLAIN");
                     ?>
 
                     <td><?php echo $ID?></td>
+                    <td><?php echo $name?></td>
+                    <td><?php echo $type?></td>
                     <td><?php echo $Price?></td>
                     <td><?php echo $InventoryDate?></td>
                     <td><?php echo $Inventory?></td>
