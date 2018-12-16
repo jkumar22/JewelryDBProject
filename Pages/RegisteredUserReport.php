@@ -197,7 +197,9 @@ $COMPLAINSQL = $dbCon ->query("SELECT * FROM COMPLAIN");
                     <th>Rating</th>
                     <th>Date</th>
                     <th>Is it Purchased</th>
-                    <th>Option</th>
+                    <th>Option1</th>
+                    <th>Option2</th>
+                    <th>Option3</th>
                     <th>Added Price</th>
                 </tr>
 
@@ -217,7 +219,9 @@ $COMPLAINSQL = $dbCon ->query("SELECT * FROM COMPLAIN");
                     $ratings = $rows['ratings'];
                     $dateOfPurchase = $rows['dateOfPurchase'];
                     $isPurchasedFlag = $rows['isPurchasedFlag'];
-                    $Option = $rows['options'];
+                    $Option1 = $rows['option1'];
+                    $Option2 = $rows['option2'];
+                    $Option3 = $rows['option3'];
                     $addprice = $rows['addprice'];
 
                     ?>
@@ -228,7 +232,9 @@ $COMPLAINSQL = $dbCon ->query("SELECT * FROM COMPLAIN");
                     <td><?php echo $ratings?></td>
                     <td><?php echo $dateOfPurchase?></td>
                     <td><?php echo $isPurchasedFlag?></td>
-                    <td><?php echo $Option?></td>
+                    <td><?php echo $Option1?></td>
+                    <td><?php echo $Option2?></td>
+                    <td><?php echo $Option3?></td>
                     <td><?php echo $addprice?></td>
 
                     <?php

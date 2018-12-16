@@ -21,6 +21,34 @@ $productID = $price = $inventory = $inventoryDate = $stock = $result = $Image = 
             <h2>Welcome to Awesome Jewellery Home!</h2>
             <p>Buy the best Jewellery in the world.</p>
             <hr>
+
+            <h3><U>Most Popular</U></h3>
+            <div style="width:100%; display: flex;">
+                <?php
+                $sqlString = "SELECT * From PRODUCT where productID IN (SELECT productID FROM CART GROUP BY productID ORDER BY count(productID) DESC LIMIT 3)";
+                $quarrySQL = $dbCon ->query($sqlString);
+
+                if($quarrySQL ->num_rows != 0)
+                {
+
+                    while ($rows = $quarrySQL->fetch_assoc())
+                    {
+
+                        $Image = "..\Images\\" . $rows['image'];
+                        $productID = $rows['productID'];
+                        $price = $rows['price'];
+                        $inventory = $rows['inventory'];
+                        $inventoryDate = $rows['inventoryDate'];
+                        $stock = $rows['stock'];
+                        ?>
+                        <div align="center" class="column"; style="width:20%; margin-right:50px; margin-left:50px" >
+                            <img src="<?= $Image ?>"  width="100" height="100" align="middle" >
+                            <p><b>Price:$ <?=$price?> </b></p>
+                            <a href="Cart.php?secureVar=<?= $productID ?>"><input type="button" value="Add to Cart"></a>
+                        </div>
+                    <?php }}?>
+            </div>
+
             <h3><U>EARRINGS</U></h3>
             <div style="width:100%; display: flex;">
                 <?php
