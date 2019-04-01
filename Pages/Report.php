@@ -67,7 +67,7 @@ $ProductMOTHERBRACELETS = $dbCon ->query("SELECT * FROM PRODUCT JOIN MOTHERBRACE
 <head>
     <link rel="stylesheet" type="text/css" href="../Style/styleSheet.css">
 </head>
-<body background="../Images/bg4.jpg">
+
 <script>
 window.onload = function() {
  
